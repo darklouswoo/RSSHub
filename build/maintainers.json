@@ -111,9 +111,6 @@
   "/bandbbs/:watch_type?/:list_type?": [
     "hoilc"
   ],
-  "/bbcnewslabs/news": [
-    "elxy"
-  ],
   "/bestblogs/feeds/:category?": [
     "zhenlohuang"
   ],
@@ -187,9 +184,6 @@
   ],
   "/codefather/questions/:sort?": [
     "JackyST0"
-  ],
-  "/cohere/blog": [
-    "Loongphy"
   ],
   "/cowlevel/element/:id": [
     "hoilc"
@@ -275,6 +269,9 @@
   "/hanime/video": [
     "EsuRt"
   ],
+  "/hashnode/blog/:username": [
+    "hnrainll"
+  ],
   "/home-assistant/hacs/repositories": [
     "DIYgod"
   ],
@@ -323,12 +320,6 @@
   ],
   "/likeshop/:site": [
     "nickyfoto"
-  ],
-  "/link3/events": [
-    "cxheng315"
-  ],
-  "/link3/profile/:handle": [
-    "cxheng315"
   ],
   "/lizhi/user/:id": [
     "nczitzk"
@@ -516,6 +507,9 @@
   "/abmedia/index": [
     "Fatpandac"
   ],
+  "/abskoop/": [
+    "zhenhappy"
+  ],
   "/acg17/post/all": [
     "SunBK201"
   ],
@@ -574,9 +568,6 @@
   ],
   "/bing/search/:keyword": [
     "CaoMeiYouRen"
-  ],
-  "/bitmovin/blog": [
-    "elxy"
   ],
   "/bnext/": [
     "johan456789"
@@ -686,9 +677,6 @@
     "Yukaii",
     "kaiix"
   ],
-  "/hashnode/blog/:username": [
-    "hnrainll"
-  ],
   "/hn.plus/konek/newest": [
     "TungHaHuy"
   ],
@@ -718,9 +706,6 @@
   ],
   "/idolypride/news": [
     "Mingxia1"
-  ],
-  "/iheima/recommend": [
-    "p3psi-boo"
   ],
   "/ippa/": [
     "cnkmmk"
@@ -801,6 +786,9 @@
   ],
   "/macmenubar/recently/:category?": [
     "5upernova-heng"
+  ],
+  "/manyvids/profile/vids/:uid": [
+    "TonyRL"
   ],
   "/metmuseum/exhibitions/:state?": [
     "chazeon"
@@ -905,8 +893,17 @@
   "/stockedge/daily-updates/news": [
     "Rjnishant530"
   ],
+  "/thewirehindi/category/:category": [
+    "Rjnishant530"
+  ],
+  "/thewirehindi/": [
+    "Rjnishant530"
+  ],
   "/thwiki/calendar/:before?/:after?": [
     "aether17"
+  ],
+  "/towardsdatascience/latest": [
+    "mintyfrankie"
   ],
   "/tqyb/sncsyjxh": [
     "Fatpandac"
@@ -1006,6 +1003,9 @@
   ],
   "/aicaijing/recommend": [
     "nczitzk"
+  ],
+  "/bitmovin/blog": [
+    "elxy"
   ],
   "/bse/:category?/:keyword?": [
     "nczitzk"
@@ -1114,12 +1114,6 @@
   ],
   "/themoviedb/trending/:mediaType/:timeWindow/:lang?": [
     "x2cf"
-  ],
-  "/thewirehindi/category/:category": [
-    "Rjnishant530"
-  ],
-  "/thewirehindi/": [
-    "Rjnishant530"
   ],
   "/aliresearch/information/:type?": [
     "nczitzk"
@@ -1431,9 +1425,6 @@
   "/manus/blog": [
     "cscnk52"
   ],
-  "/manyvids/profile/vids/:uid": [
-    "TonyRL"
-  ],
   "/marginnote/tag/:id?": [
     "nczitzk"
   ],
@@ -1453,9 +1444,6 @@
   "/mittrchina/:type?": [
     "EsuRt",
     "queensferryme"
-  ],
-  "/mymusicsheet/user/sheets/:username/:iso?/:freeOnly?": [
-    "Freddd13"
   ],
   "/nanhua/index-research/:category?": [
     "pseudoyu"
@@ -1806,10 +1794,6 @@
   "/facebook/reels/:id": [
     "TonyRL"
   ],
-  "/fanbox/:creator": [
-    "KarasuShin",
-    "pseudoyu"
-  ],
   "/fansly/user/:username": [
     "TonyRL"
   ],
@@ -2069,12 +2053,6 @@
   "/wellcee/support-city": [
     "TonyRL"
   ],
-  "/zuvio/student5/:board?": [
-    "TonyRL"
-  ],
-  "/zuvio/student5/boards": [
-    "TonyRL"
-  ],
   "/fanfou/home_timeline": [
     "junbaor"
   ],
@@ -2188,9 +2166,6 @@
   "/423down/:category{.+}?": [
     "nczitzk"
   ],
-  "/4ksj/:id?": [
-    "nczitzk"
-  ],
   "/50forum/": [
     "sddiky"
   ],
@@ -2256,12 +2231,6 @@
   ],
   "/abc-tenpo/rent-benchmark/:pref?": [
     "pseudoyu"
-  ],
-  "/abskoop/nsfw": [
-    "zhenhappy"
-  ],
-  "/abskoop/": [
-    "zhenhappy"
   ],
   "/academia/topic/:interest": [
     "K33k0",
@@ -2599,6 +2568,9 @@
   "/asus/bios/:model/:lang?": [
     "Fatpandac"
   ],
+  "/asus/driver/:model/:lang?/:os?": [
+    "regulad"
+  ],
   "/asus/gpu-tweak": [
     "TonyRL"
   ],
@@ -2709,9 +2681,6 @@
   ],
   "/bcg/search/:params?": [
     "DIYgod"
-  ],
-  "/bdys/:caty?/:type?/:area?/:year?/:order?": [
-    "nczitzk"
   ],
   "/beijingprice/:category{.+}?": [
     "nczitzk"
@@ -2869,9 +2838,6 @@
   ],
   "/btbtla/gxlist": [
     "Hermes1030"
-  ],
-  "/btzj/:category?": [
-    "nczitzk"
   ],
   "/buaa/lib/space/:path{newbook.*}": [
     "OverflowCat"
@@ -3087,10 +3053,6 @@
   ],
   "/ccnu/yjs": [
     "shengmaosu"
-  ],
-  "/ccreports/article": [
-    "EsuRt",
-    "Fatpandac"
   ],
   "/cczu/jwc/:category?": [
     "stdrc"
@@ -3455,6 +3417,10 @@
   "/cognition/blog": [
     "Loongphy",
     "ttttmr"
+  ],
+  "/cohere/blog": [
+    "Loongphy",
+    "ljh12138164"
   ],
   "/cointelegraph/": [
     "pseudoyu"
@@ -4023,9 +3989,6 @@
   "/eagle/changelog/:language?": [
     "tigercubden"
   ],
-  "/eastday/24/:category?": [
-    "nczitzk"
-  ],
   "/eastday/portrait": [
     "nczitzk"
   ],
@@ -4485,9 +4448,6 @@
   "/gamebase/news/:type?/:category?": [
     "nczitzk"
   ],
-  "/gamegene/news": [
-    "lone1y-51"
-  ],
   "/gamer520/:category?/:order?": [
     "xzzpig"
   ],
@@ -4723,6 +4683,9 @@
   ],
   "/grist/featured": [
     "Rjnishant530"
+  ],
+  "/groq/blog": [
+    "ljh12138164"
   ],
   "/gs/developer/blog": [
     "chesha1"
@@ -5223,6 +5186,9 @@
   ],
   "/iguoguo/html5": [
     "yuxinliu-alex"
+  ],
+  "/iheima/recommend": [
+    "p3psi-boo"
   ],
   "/iiilab/": [
     "Joey"
@@ -5758,9 +5724,6 @@
   "/lifetimes/:category?": [
     "nczitzk"
   ],
-  "/lightnovel/:keywords/:security_key?": [
-    "nightmare-mio"
-  ],
   "/lineageos/changes": [
     "nczitzk"
   ],
@@ -6000,8 +5963,17 @@
   "/minhangmuseum/interim": [
     "magazian"
   ],
+  "/minimax/blog/:lang?": [
+    "ljh12138164"
+  ],
+  "/minimax/news/:lang?": [
+    "ljh12138164"
+  ],
   "/missav/new": [
     "TonyRL"
+  ],
+  "/mistral/news": [
+    "ljh12138164"
   ],
   "/mit/ocw-top": [
     "dwemerx"
@@ -6239,8 +6211,9 @@
   "/ncwu/notice": [
     "vuhe"
   ],
-  "/ndss-symposium/ndss": [
-    "ZeddYu"
+  "/ndss-symposium/ndss/:abstract?": [
+    "ZeddYu",
+    "yuguorui"
   ],
   "/neatdownloadmanager/download/:os?": [
     "nczitzk"
@@ -6303,9 +6276,6 @@
   "/newyorker/:category": [
     "IvanWng97",
     "pseudoyu"
-  ],
-  "/newzmz/:id?/:downLinkType?": [
-    "nczitzk"
   ],
   "/nextapple/realtime/:category?": [
     "miles170"
@@ -7042,6 +7012,10 @@
   "/producereport/:category{.+}?": [
     "nczitzk"
   ],
+  "/producthunt/feed": [
+    "miaoyafeng",
+    "Fatpandac"
+  ],
   "/producthunt/today": [
     "miaoyafeng",
     "Fatpandac"
@@ -7073,12 +7047,6 @@
   ],
   "/psnine/trade": [
     "betta-cyber"
-  ],
-  "/psyche/topic/:topic": [
-    "emdoe"
-  ],
-  "/psyche/type/:type": [
-    "emdoe"
   ],
   "/publico/ciencias/:subsection?": [
     "adrianrico97"
@@ -7839,8 +7807,9 @@
   "/sicau/zsjy/:category?": [
     "nczitzk"
   ],
-  "/sigsac/ccs": [
-    "ZeddYu"
+  "/sigsac/ccs/:year?": [
+    "ZeddYu",
+    "yuguorui"
   ],
   "/simonsfoundation/articles": [
     "emdoe"
@@ -8485,9 +8454,6 @@
   "/toutiao/user/token/:token": [
     "TonyRL"
   ],
-  "/towardsdatascience/latest": [
-    "mintyfrankie"
-  ],
   "/tpre/cqzr": [
     "kt286"
   ],
@@ -8885,9 +8851,6 @@
     "ViggoC"
   ],
   "/wdc/download/:id?": [
-    "nczitzk"
-  ],
-  "/wdfxw/bookfree/:id?": [
     "nczitzk"
   ],
   "/web3caff/:path{.+}?": [
@@ -9727,15 +9690,6 @@
   "/8world/topic/:id": [
     "nczitzk"
   ],
-  "/95mm/category/:category": [
-    "nczitzk"
-  ],
-  "/95mm/tab/:tab?": [
-    "nczitzk"
-  ],
-  "/95mm/tag/:tag": [
-    "nczitzk"
-  ],
   "/9to5/:subsite/:tag?": [
     "HenryQW"
   ],
@@ -9801,6 +9755,12 @@
   ],
   "/arcteryx/outlet/:country/:gender": [
     "IvanWng97"
+  ],
+  "/arm/blog/:topic?": [
+    "ljh12138164"
+  ],
+  "/arm/news/:topic?": [
+    "ljh12138164"
   ],
   "/asahi/area/:id": [
     "nczitzk"
@@ -10554,15 +10514,6 @@
     "TigerCubDen",
     "SkyNetX007"
   ],
-  "/furstar/artists/:lang?": [
-    "NeverBehave"
-  ],
-  "/furstar/archive/:lang?": [
-    "NeverBehave"
-  ],
-  "/furstar/characters/:lang?": [
-    "NeverBehave"
-  ],
   "/gamer/ani/anime/:sn": [
     "maple3142",
     "pseudoyu"
@@ -10621,17 +10572,6 @@
     "nczitzk"
   ],
   "/gelonghui/user/:id": [
-    "nczitzk"
-  ],
-  "/getitfree/category/:id{.+}?": [
-    "sanmmm",
-    "nczitzk"
-  ],
-  "/getitfree/search/:keyword": [
-    "sanmmm",
-    "nczitzk"
-  ],
-  "/getitfree/tag/:id{.+}?": [
     "nczitzk"
   ],
   "/gov/ah/kjt/:category{.+}?": [
@@ -12357,12 +12297,6 @@
   "/touhougarakuta/:language/:type": [
     "ttyfly"
   ],
-  "/twreporter/category/:category": [
-    "emdoe"
-  ],
-  "/twreporter/newest": [
-    "emdoe"
-  ],
   "/vocus/publication/:id": [
     "Maecenas"
   ],
@@ -12757,6 +12691,9 @@
     "nczitzk",
     "hyoban"
   ],
+  "/mymusicsheet/user/sheets/:username/:iso?/:freeOnly?": [
+    "Freddd13"
+  ],
   "/pixiv/user/bookmarks/:id": [
     "EYHN"
   ],
@@ -12779,6 +12716,12 @@
   "/pixiv/user/novels/:id/:full_content?": [
     "TonyRL",
     "Tsuyumi25"
+  ],
+  "/psyche/topic/:topic": [
+    "emdoe"
+  ],
+  "/psyche/type/:type": [
+    "emdoe"
   ],
   "/ryo.lu/journal/:lang?": [
     "TonyRL"
@@ -12832,6 +12775,16 @@
     "TonyRL",
     "ETiV"
   ],
+  "/twreporter/category/:category": [
+    "emdoe"
+  ],
+  "/twreporter/newest": [
+    "emdoe"
+  ],
+  "/fanbox/:creator": [
+    "KarasuShin",
+    "pseudoyu"
+  ],
   "/google/album/:id": [
     "hoilc"
   ],
@@ -12876,6 +12829,12 @@
   ],
   "/google/play/:id/:lang?": [
     "surwall"
+  ],
+  "/zuvio/student5/boards": [
+    "TonyRL"
+  ],
+  "/zuvio/student5/:board?": [
+    "TonyRL"
   ],
   "/twitter/trends/:woeid?": [
     "sakamossan"

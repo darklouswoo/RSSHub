@@ -229,7 +229,7 @@
         "categories": [
           "multimedia"
         ],
-        "example": "/163/music/user/playrecords/45441555/0",
+        "example": "/163/music/user/playrecords/45441555/1",
         "parameters": {
           "uid": "用户 uid, 可在用户主页 URL 中找到",
           "type": "排行榜类型，0所有时间(默认)，1最近一周"
@@ -1314,45 +1314,6 @@
     "url": "bandbbs.cn",
     "lang": "zh-CN"
   },
-  "bbcnewslabs": {
-    "routes": {
-      "/news": {
-        "path": "/news",
-        "categories": [
-          "programming"
-        ],
-        "example": "/bbcnewslabs/news",
-        "parameters": {},
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "bbcnewslabs.co.uk/",
-              "www.bbc.co.uk/rdnewslabs/news/"
-            ]
-          }
-        ],
-        "name": "News",
-        "maintainers": [
-          "elxy"
-        ],
-        "url": "www.bbc.co.uk/rdnewslabs/news/",
-        "location": "news.ts",
-        "module": "() => import('@/routes/bbcnewslabs/news.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "BBC News Labs",
-    "url": "www.bbc.co.uk/rdnewslabs",
-    "lang": "en"
-  },
   "bestblogs": {
     "routes": {
       "/feeds/:category?": {
@@ -2222,45 +2183,6 @@
     "name": "编程导航",
     "url": "www.codefather.cn",
     "description": "编程导航是一个编程学习交流社区，由程序员鱼皮创建，提供学习路线、项目教程、求职攻略、技术交流等内容。"
-  },
-  "cohere": {
-    "routes": {
-      "/blog": {
-        "path": "/blog",
-        "name": "Blog",
-        "url": "cohere.com/blog",
-        "maintainers": [
-          "Loongphy"
-        ],
-        "example": "/cohere/blog",
-        "description": "Cohere is a platform for building AI applications.",
-        "categories": [
-          "blog"
-        ],
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportRadar": true,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "cohere.com"
-            ]
-          }
-        ],
-        "location": "index.ts",
-        "module": "() => import('@/routes/cohere/index.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "Cohere",
-    "url": "cohere.com",
-    "lang": "en"
   },
   "cowlevel": {
     "routes": {
@@ -3317,6 +3239,47 @@
     ],
     "lang": "en"
   },
+  "hashnode": {
+    "routes": {
+      "/blog/:username": {
+        "path": "/blog/:username",
+        "categories": [
+          "blog"
+        ],
+        "example": "/hashnode/blog/philnash",
+        "parameters": {
+          "username": "Hashnode 用户名，或 hashnode.dev 前面的博客子域名"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "hashnode.dev/"
+            ]
+          }
+        ],
+        "name": "用户博客",
+        "maintainers": [
+          "hnrainll"
+        ],
+        "url": "hashnode.dev/",
+        "description": "用户名与博客子域名相同或账号只关联一个博客时，可以直接使用用户名。账号关联多个博客且子域名不匹配时，请使用所需博客的 Hashnode 子域名。",
+        "location": "blog.tsx",
+        "module": "() => import('@/routes/hashnode/blog.tsx')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Hashnode",
+    "url": "hashnode.dev",
+    "lang": "en"
+  },
   "home-assistant": {
     "routes": {
       "/hacs/repositories": {
@@ -3921,77 +3884,6 @@
     "apiRoutes": {},
     "name": "LikeShop",
     "url": "likeshop.me",
-    "lang": "en"
-  },
-  "link3": {
-    "routes": {
-      "/events": {
-        "path": "/events",
-        "name": "Events",
-        "url": "link3.to",
-        "maintainers": [
-          "cxheng315"
-        ],
-        "example": "/link3/events",
-        "categories": [
-          "other"
-        ],
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "link3.to/events"
-            ],
-            "target": "/events"
-          }
-        ],
-        "location": "events.ts",
-        "module": "() => import('@/routes/link3/events.ts')"
-      },
-      "/profile/:handle": {
-        "path": "/profile/:handle",
-        "name": "Profile",
-        "url": "link3.to",
-        "maintainers": [
-          "cxheng315"
-        ],
-        "example": "/link3/profile/synfutures_defi",
-        "parameters": {
-          "handle": "Profile handle"
-        },
-        "categories": [
-          "other"
-        ],
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "link3.to/:handle"
-            ],
-            "target": "/profile/:handle"
-          }
-        ],
-        "location": "profile.ts",
-        "module": "() => import('@/routes/link3/profile.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "Link3",
-    "url": "link3.to",
     "lang": "en"
   },
   "lizhi": {
@@ -6095,6 +5987,39 @@
     "url": "www.abmedia.io",
     "lang": "zh-TW"
   },
+  "abskoop": {
+    "routes": {
+      "/": {
+        "path": "/",
+        "categories": [
+          "multimedia"
+        ],
+        "example": "/abskoop",
+        "radar": [
+          {
+            "source": [
+              "ahhhhfs.com/"
+            ],
+            "target": ""
+          }
+        ],
+        "name": "存档列表",
+        "maintainers": [
+          "zhenhappy"
+        ],
+        "url": "ahhhhfs.com/",
+        "features": {
+          "nsfw": true
+        },
+        "location": "index.ts",
+        "module": "() => import('@/routes/abskoop/index.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "A 姐分享",
+    "url": "www.ahhhhfs.com",
+    "lang": "zh-TW"
+  },
   "acg17": {
     "routes": {
       "/post/all": {
@@ -6805,45 +6730,6 @@
     "name": "Bing",
     "url": "cn.bing.com",
     "lang": "zh-CN"
-  },
-  "bitmovin": {
-    "routes": {
-      "/blog": {
-        "path": "/blog",
-        "categories": [
-          "programming"
-        ],
-        "example": "/bitmovin/blog",
-        "parameters": {},
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "bitmovin.com/blog",
-              "bitmovin.com/"
-            ]
-          }
-        ],
-        "name": "Blog",
-        "maintainers": [
-          "elxy"
-        ],
-        "url": "bitmovin.com/blog",
-        "location": "blog.ts",
-        "module": "() => import('@/routes/bitmovin/blog.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "Bitmovin",
-    "url": "bitmovin.com",
-    "lang": "en"
   },
   "bnext": {
     "routes": {
@@ -8098,47 +7984,6 @@
     "url": "hackmd.io",
     "lang": "en"
   },
-  "hashnode": {
-    "routes": {
-      "/blog/:username": {
-        "path": "/blog/:username",
-        "categories": [
-          "blog"
-        ],
-        "example": "/hashnode/blog/inklings",
-        "parameters": {
-          "username": "博主名称，用户头像 URL 中找到"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "hashnode.dev/"
-            ]
-          }
-        ],
-        "name": "用户博客",
-        "maintainers": [
-          "hnrainll"
-        ],
-        "url": "hashnode.dev/",
-        "description": "::: tip\nusername 为博主用户名，而非`xxx.hashnode.dev`中`xxx`所代表的 blog 地址。\n:::",
-        "location": "blog.tsx",
-        "module": "() => import('@/routes/hashnode/blog.tsx')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "hashnode",
-    "url": "hashnode.dev",
-    "lang": "en"
-  },
   "hn.plus": {
     "routes": {
       "/konek/newest": {
@@ -8461,29 +8306,6 @@
     "name": "IDOLY PRIDE 偶像荣耀",
     "url": "idolypride.jp",
     "lang": "ja"
-  },
-  "iheima": {
-    "routes": {
-      "/recommend": {
-        "path": "/recommend",
-        "categories": [
-          "new-media"
-        ],
-        "example": "/iheima/recommend",
-        "url": "www.iheima.com",
-        "name": "推荐",
-        "maintainers": [
-          "p3psi-boo"
-        ],
-        "location": "index.ts",
-        "module": "() => import('@/routes/iheima/index.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "i黑马网",
-    "url": "www.iheima.com",
-    "description": "",
-    "lang": "zh-CN"
   },
   "ippa": {
     "routes": {
@@ -9375,6 +9197,41 @@
     "apiRoutes": {},
     "name": "MacMenuBar",
     "url": "macmenubar.com",
+    "lang": "en"
+  },
+  "manyvids": {
+    "routes": {
+      "/profile/vids/:uid": {
+        "path": "/profile/vids/:uid",
+        "radar": [
+          {
+            "source": [
+              "www.manyvids.com/Profile/:uid/:handle/Store/*",
+              "www.manyvids.com/Profile/:uid/:handle/Store"
+            ]
+          }
+        ],
+        "parameters": {
+          "uid": "User ID, can be found in the URL."
+        },
+        "name": "Creator Videos",
+        "example": "/manyvids/profile/vids/1001213004",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "features": {
+          "nsfw": true
+        },
+        "location": "video.tsx",
+        "module": "() => import('@/routes/manyvids/video.tsx')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "ManyVids",
+    "url": "www.manyvids.com",
+    "categories": [
+      "multimedia"
+    ],
     "lang": "en"
   },
   "metmuseum": {
@@ -10739,6 +10596,160 @@
     "url": "web.stockedge.com",
     "lang": "en"
   },
+  "thewirehindi": {
+    "routes": {
+      "/category/:category": {
+        "path": "/category/:category",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/thewirehindi/category/bharat",
+        "parameters": {
+          "category": {
+            "description": "Category name",
+            "options": [
+              {
+                "value": "interview",
+                "label": "इंटरव्यू"
+              },
+              {
+                "value": "audio",
+                "label": "ऑडियो"
+              },
+              {
+                "value": "kala-sahitya",
+                "label": "कला-साहित्य"
+              },
+              {
+                "value": "campus",
+                "label": "कैंपस"
+              },
+              {
+                "value": "covid-19",
+                "label": "कोविड-19"
+              },
+              {
+                "value": "jan-ki-baat",
+                "label": "जन की बात"
+              },
+              {
+                "value": "duniya",
+                "label": "दुनिया"
+              },
+              {
+                "value": "north-east",
+                "label": "नॉर्थ ईस्ट"
+              },
+              {
+                "value": "prasangik",
+                "label": "प्रासंगिक"
+              },
+              {
+                "value": "bharat",
+                "label": "भारत"
+              },
+              {
+                "value": "media",
+                "label": "मीडिया"
+              },
+              {
+                "value": "media-bol",
+                "label": "मीडिया बोल"
+              },
+              {
+                "value": "rajneeti",
+                "label": "राजनीति"
+              },
+              {
+                "value": "vichar",
+                "label": "विचार"
+              },
+              {
+                "value": "vigyan",
+                "label": "विज्ञान"
+              },
+              {
+                "value": "vishesh",
+                "label": "विशेष"
+              },
+              {
+                "value": "video",
+                "label": "वीडियो"
+              },
+              {
+                "value": "samaj",
+                "label": "समाज"
+              },
+              {
+                "value": "ham-bhi-bharat",
+                "label": "हम भी भारत"
+              },
+              {
+                "value": "hamare-bare-mein",
+                "label": "हमारे बारे में"
+              }
+            ]
+          }
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "thewirehindi.com/category/:category"
+            ]
+          }
+        ],
+        "name": "Category",
+        "maintainers": [
+          "Rjnishant530"
+        ],
+        "url": "thewirehindi.com/",
+        "location": "category.ts",
+        "module": "() => import('@/routes/thewirehindi/category.ts')"
+      },
+      "/": {
+        "path": "/",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/thewirehindi",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "thewirehindi.com/"
+            ]
+          }
+        ],
+        "name": "Latest News",
+        "maintainers": [
+          "Rjnishant530"
+        ],
+        "url": "thewirehindi.com/",
+        "location": "index.ts",
+        "module": "() => import('@/routes/thewirehindi/index.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "The Wire Hindi",
+    "url": "thewirehindi.com",
+    "lang": "hi"
+  },
   "thwiki": {
     "routes": {
       "/calendar/:before?/:after?": {
@@ -10781,6 +10792,35 @@
     "name": "THBWiki",
     "url": "thwiki.cc",
     "lang": "zh-CN"
+  },
+  "towardsdatascience": {
+    "routes": {
+      "/latest": {
+        "path": "/latest",
+        "categories": [
+          "blog"
+        ],
+        "example": "/towardsdatascience/latest",
+        "radar": [
+          {
+            "source": [
+              "towardsdatascience.com/"
+            ]
+          }
+        ],
+        "name": "Latest articles",
+        "maintainers": [
+          "mintyfrankie"
+        ],
+        "url": "towardsdatascience.com/latest",
+        "location": "latest.ts",
+        "module": "() => import('@/routes/towardsdatascience/latest.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Towards Data Science",
+    "url": "towardsdatascience.com",
+    "lang": "en"
   },
   "tqyb": {
     "routes": {
@@ -11902,6 +11942,45 @@
     "url": "www.aicaijing.com",
     "lang": "zh-CN"
   },
+  "bitmovin": {
+    "routes": {
+      "/blog": {
+        "path": "/blog",
+        "categories": [
+          "programming"
+        ],
+        "example": "/bitmovin/blog",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "bitmovin.com/blog",
+              "bitmovin.com/"
+            ]
+          }
+        ],
+        "name": "Blog",
+        "maintainers": [
+          "elxy"
+        ],
+        "url": "bitmovin.com/blog",
+        "location": "blog.ts",
+        "module": "() => import('@/routes/bitmovin/blog.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Bitmovin",
+    "url": "bitmovin.com",
+    "lang": "en"
+  },
   "bse": {
     "routes": {
       "/:category?/:keyword?": {
@@ -12377,8 +12456,7 @@
           "requireConfig": [
             {
               "name": "GELBOORU_API_KEY",
-              "description": "Gelbooru 偶尔会开启 API 认证，需配合 `GELBOORU_USER_ID`，从 `https://gelbooru.com/index.php?page=account&s=options` 获取",
-              "optional": true
+              "description": "Gelbooru 偶尔会开启 API 认证，需配合 `GELBOORU_USER_ID`，从 `https://gelbooru.com/index.php?page=account&s=options` 获取"
             },
             {
               "name": "GELBOORU_USER_ID",
@@ -13099,160 +13177,6 @@
     "url": "themoviedb.org",
     "description": "::: tip\nRefer to <https://developers.themoviedb.org/3/getting-started/languages> for the language parameter in the route.\n:::",
     "lang": "en"
-  },
-  "thewirehindi": {
-    "routes": {
-      "/category/:category": {
-        "path": "/category/:category",
-        "categories": [
-          "new-media"
-        ],
-        "example": "/thewirehindi/category/bharat",
-        "parameters": {
-          "category": {
-            "description": "Category name",
-            "options": [
-              {
-                "value": "interview",
-                "label": "इंटरव्यू"
-              },
-              {
-                "value": "audio",
-                "label": "ऑडियो"
-              },
-              {
-                "value": "kala-sahitya",
-                "label": "कला-साहित्य"
-              },
-              {
-                "value": "campus",
-                "label": "कैंपस"
-              },
-              {
-                "value": "covid-19",
-                "label": "कोविड-19"
-              },
-              {
-                "value": "jan-ki-baat",
-                "label": "जन की बात"
-              },
-              {
-                "value": "duniya",
-                "label": "दुनिया"
-              },
-              {
-                "value": "north-east",
-                "label": "नॉर्थ ईस्ट"
-              },
-              {
-                "value": "prasangik",
-                "label": "प्रासंगिक"
-              },
-              {
-                "value": "bharat",
-                "label": "भारत"
-              },
-              {
-                "value": "media",
-                "label": "मीडिया"
-              },
-              {
-                "value": "media-bol",
-                "label": "मीडिया बोल"
-              },
-              {
-                "value": "rajneeti",
-                "label": "राजनीति"
-              },
-              {
-                "value": "vichar",
-                "label": "विचार"
-              },
-              {
-                "value": "vigyan",
-                "label": "विज्ञान"
-              },
-              {
-                "value": "vishesh",
-                "label": "विशेष"
-              },
-              {
-                "value": "video",
-                "label": "वीडियो"
-              },
-              {
-                "value": "samaj",
-                "label": "समाज"
-              },
-              {
-                "value": "ham-bhi-bharat",
-                "label": "हम भी भारत"
-              },
-              {
-                "value": "hamare-bare-mein",
-                "label": "हमारे बारे में"
-              }
-            ]
-          }
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "thewirehindi.com/category/:category"
-            ]
-          }
-        ],
-        "name": "Category",
-        "maintainers": [
-          "Rjnishant530"
-        ],
-        "url": "thewirehindi.com/",
-        "location": "category.ts",
-        "module": "() => import('@/routes/thewirehindi/category.ts')"
-      },
-      "/": {
-        "path": "/",
-        "categories": [
-          "new-media"
-        ],
-        "example": "/thewirehindi",
-        "parameters": {},
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "thewirehindi.com/"
-            ]
-          }
-        ],
-        "name": "Latest News",
-        "maintainers": [
-          "Rjnishant530"
-        ],
-        "url": "thewirehindi.com/",
-        "location": "index.ts",
-        "module": "() => import('@/routes/thewirehindi/index.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "The Wire Hindi",
-    "url": "thewirehindi.com",
-    "lang": "hi"
   },
   "aliresearch": {
     "routes": {
@@ -15985,7 +15909,7 @@
           "finance"
         ],
         "view": 0,
-        "example": "/jin10/topic/396",
+        "example": "/jin10/topic/397",
         "parameters": {
           "id": "N"
         },
@@ -16698,6 +16622,19 @@
         "maintainers": [
           "kt286"
         ],
+        "features": {
+          "requireConfig": [
+            {
+              "name": "EMAIL_CONFIG_*",
+              "description": "IMAP account settings, see [Route-specific Configurations](https://docs.rsshub.app/deploy/config#route-specific-configurations)"
+            }
+          ],
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
         "location": "imap.ts",
         "module": "() => import('@/routes/mail/imap.ts')"
       },
@@ -16720,6 +16657,19 @@
         "maintainers": [
           "kt286"
         ],
+        "features": {
+          "requireConfig": [
+            {
+              "name": "EMAIL_CONFIG_*",
+              "description": "IMAP account settings, see [Route-specific Configurations](https://docs.rsshub.app/deploy/config#route-specific-configurations)"
+            }
+          ],
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
         "location": "imap.ts",
         "module": "() => import('@/routes/mail/imap.ts')"
       }
@@ -16777,41 +16727,6 @@
     "apiRoutes": {},
     "name": "Manus",
     "url": "manus.im",
-    "lang": "en"
-  },
-  "manyvids": {
-    "routes": {
-      "/profile/vids/:uid": {
-        "path": "/profile/vids/:uid",
-        "radar": [
-          {
-            "source": [
-              "www.manyvids.com/Profile/:uid/:handle/Store/*",
-              "www.manyvids.com/Profile/:uid/:handle/Store"
-            ]
-          }
-        ],
-        "parameters": {
-          "uid": "User ID, can be found in the URL."
-        },
-        "name": "Creator Videos",
-        "example": "/manyvids/profile/vids/1001213004",
-        "maintainers": [
-          "TonyRL"
-        ],
-        "features": {
-          "nsfw": true
-        },
-        "location": "video.tsx",
-        "module": "() => import('@/routes/manyvids/video.tsx')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "ManyVids",
-    "url": "www.manyvids.com",
-    "categories": [
-      "multimedia"
-    ],
     "lang": "en"
   },
   "marginnote": {
@@ -17043,50 +16958,6 @@
     "name": "麻省理工科技评论",
     "url": "mittrchina.com",
     "lang": "zh-CN"
-  },
-  "mymusicsheet": {
-    "routes": {
-      "/user/sheets/:username/:iso?/:freeOnly?": {
-        "path": "/user/sheets/:username/:iso?/:freeOnly?",
-        "categories": [
-          "shopping"
-        ],
-        "example": "/mymusicsheet/user/sheets/HalcyonMusic/USD",
-        "parameters": {
-          "username": "Username, can be found in the URL",
-          "iso": "ISO 4217 currency code for displaying prices, defaults to `USD`",
-          "freeOnly": "Only return free scores, any value to enable"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "mymusicfive.com/:username/*",
-              "mymusicfive.com/:username"
-            ],
-            "target": "/user/sheets/:username"
-          }
-        ],
-        "name": "User Sheets",
-        "maintainers": [
-          "Freddd13"
-        ],
-        "description": "Please refer to [Wikipedia](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) for ISO 4217.",
-        "location": "usersheets.tsx",
-        "module": "() => import('@/routes/mymusicsheet/usersheets.tsx')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "mymusic5 (MyMusicSheet)",
-    "url": "mymusicfive.com",
-    "lang": "en"
   },
   "nanhua": {
     "routes": {
@@ -21215,42 +21086,6 @@
     "url": "www.facebook.com",
     "lang": "en"
   },
-  "fanbox": {
-    "routes": {
-      "/:creator": {
-        "path": "/:creator",
-        "categories": [
-          "social-media"
-        ],
-        "example": "/fanbox/official",
-        "parameters": {
-          "creator": "fanbox user name"
-        },
-        "maintainers": [
-          "KarasuShin",
-          "pseudoyu"
-        ],
-        "name": "Creator",
-        "features": {
-          "requireConfig": [
-            {
-              "name": "FANBOX_SESSION_ID",
-              "description": "Required for private posts. Can be found in browser DevTools -> Application -> Cookies -> https://www.fanbox.cc -> FANBOXSESSID",
-              "optional": true
-            }
-          ],
-          "requirePuppeteer": false,
-          "nsfw": true
-        },
-        "location": "index.ts",
-        "module": "() => import('@/routes/fanbox/index.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "fanbox",
-    "url": "www.fanbox.cc",
-    "lang": "zh-CN"
-  },
   "fansly": {
     "routes": {
       "/user/:username": {
@@ -24822,60 +24657,6 @@
     ],
     "lang": "zh-CN"
   },
-  "zuvio": {
-    "routes": {
-      "/student5/:board?": {
-        "path": "/student5/:board?",
-        "categories": [
-          "bbs"
-        ],
-        "example": "/zuvio/student5/34",
-        "parameters": {
-          "board": "看板 ID，空为全站文章，可在看板 URL 或下方路由找到"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "name": "校園話題",
-        "maintainers": [
-          "TonyRL"
-        ],
-        "location": "student5.ts",
-        "module": "() => import('@/routes/zuvio/student5.ts')"
-      },
-      "/student5/boards": {
-        "path": "/student5/boards",
-        "categories": [
-          "bbs"
-        ],
-        "example": "/zuvio/student5/boards",
-        "parameters": {},
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "name": "看板列表",
-        "maintainers": [
-          "TonyRL"
-        ],
-        "location": "boards.ts",
-        "module": "() => import('@/routes/zuvio/boards.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "Zuvio",
-    "url": "irs.zuvio.com.tw",
-    "lang": "zh-TW"
-  },
   "fanfou": {
     "routes": {
       "/home_timeline": {
@@ -27648,32 +27429,6 @@
     "description": "",
     "lang": "zh-CN"
   },
-  "4ksj": {
-    "routes": {
-      "/:id?": {
-        "path": "/:id?",
-        "name": "分类",
-        "url": "4ksj.com",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "example": "/4ksj/4k-uhd-1",
-        "parameters": {
-          "id": "分类 id，默认为最新4K电影"
-        },
-        "description": "::: tip\n若订阅 [最新 4K 电影](https://www.4ksj.com/4k-uhd-1.html)，网址为 `https://www.4ksj.com/4k-uhd-1.html`。截取 `https://www.4ksj.com/` 到末尾 `.html` 的部分 `4k-uhd-1` 作为参数，此时路由为 [`/4ksj/4k-uhd-1`](https://rsshub.app/4ksj/4k-uhd-1)。\n\n若订阅子分类 [Dolby Vision 动作 4K 电影](https://www.4ksj.com/4k-uhd-s7-display-3-dytypes-1-1.html)，网址为 `https://www.4ksj.com/4k-uhd-s7-display-3-dytypes-1-1.html`。截取 `https://www.4ksj.com/forum-` 到末尾 `.html` 的部分 `4kdianying-s7-dianyingbiaozhun-3-dytypes-9-1` 作为参数，此时路由为 [`/4ksj/4k-uhd-s7-display-3-dytypes-1-1`](https://rsshub.app/4ksj/4k-uhd-s7-display-3-dytypes-1-1)。\n:::",
-        "categories": [
-          "multimedia"
-        ],
-        "location": "forum.tsx",
-        "module": "() => import('@/routes/4ksj/forum.tsx')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "4k 世界",
-    "url": "4ksj.com",
-    "lang": "zh-CN"
-  },
   "50forum": {
     "routes": {
       "/": {
@@ -28959,64 +28714,6 @@
     "ja": {
       "name": "ABC店舗"
     }
-  },
-  "abskoop": {
-    "routes": {
-      "/nsfw": {
-        "path": "/nsfw",
-        "categories": [
-          "multimedia"
-        ],
-        "example": "/abskoop/nsfw",
-        "radar": [
-          {
-            "source": [
-              "ahhhhfs.com/"
-            ],
-            "target": ""
-          }
-        ],
-        "name": "存档列表 - NSFW",
-        "maintainers": [
-          "zhenhappy"
-        ],
-        "url": "ahhhhfs.com/",
-        "features": {
-          "nsfw": true
-        },
-        "location": "nsfw.ts",
-        "module": "() => import('@/routes/abskoop/nsfw.ts')"
-      },
-      "/": {
-        "path": "/",
-        "categories": [
-          "multimedia"
-        ],
-        "example": "/abskoop",
-        "radar": [
-          {
-            "source": [
-              "ahhhhfs.com/"
-            ],
-            "target": ""
-          }
-        ],
-        "name": "存档列表",
-        "maintainers": [
-          "zhenhappy"
-        ],
-        "url": "ahhhhfs.com/",
-        "features": {
-          "nsfw": true
-        },
-        "location": "index.ts",
-        "module": "() => import('@/routes/abskoop/index.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "A 姐分享",
-    "url": "www.ahhhhfs.com",
-    "lang": "zh-TW"
   },
   "academia": {
     "routes": {
@@ -34997,6 +34694,19 @@
               "www.asus.com/:region/networking-iot-servers/:productLine/:series/:model"
             ],
             "target": "/bios/:model"
+          },
+          {
+            "source": [
+              "rog.asus.com/laptops/:series/:model/*",
+              "rog.asus.com/motherboards/:series/:model/*",
+              "rog.asus.com/gaming-handhelds/:series/:model/*",
+              "rog.asus.com/desktops/:series/:model/*",
+              "rog.asus.com/:region/laptops/:series/:model/*",
+              "rog.asus.com/:region/motherboards/:series/:model/*",
+              "rog.asus.com/:region/gaming-handhelds/:series/:model/*",
+              "rog.asus.com/:region/desktops/:series/:model/*"
+            ],
+            "target": "/bios/:model"
           }
         ],
         "name": "BIOS",
@@ -35004,8 +34714,78 @@
           "Fatpandac"
         ],
         "url": "www.asus.com",
+        "description": "Lists every BIOS and firmware download ASUS publishes for the product, such as BIOS installers, EZ Flash images and ROG keyboard or USB-PD firmware tools.",
         "location": "bios.tsx",
         "module": "() => import('@/routes/asus/bios.tsx')"
+      },
+      "/driver/:model/:lang?/:os?": {
+        "path": "/driver/:model/:lang?/:os?",
+        "categories": [
+          "program-update"
+        ],
+        "example": "/asus/driver/ROG-Flow-Z13-2025",
+        "parameters": {
+          "model": "Model name or product-page slug, e.g. `PRIME-X570-PRO` or `ROG-Flow-Z13-2025`",
+          "lang": {
+            "description": "Language, provide access routes for other parts of the world",
+            "options": [
+              {
+                "label": "Chinese",
+                "value": "zh"
+              },
+              {
+                "label": "Global",
+                "value": "en"
+              }
+            ],
+            "default": "en"
+          },
+          "os": "Operating system ID, e.g. `52` for Windows 11 64-bit or `45` for Windows 10 64-bit. Defaults to the first operating system ASUS lists for the product"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.asus.com/displays-desktops/:productLine/:series/:model",
+              "www.asus.com/laptops/:productLine/:series/:model",
+              "www.asus.com/motherboards-components/:productLine/:series/:model",
+              "www.asus.com/networking-iot-servers/:productLine/:series/:model",
+              "www.asus.com/:region/displays-desktops/:productLine/:series/:model",
+              "www.asus.com/:region/laptops/:productLine/:series/:model",
+              "www.asus.com/:region/motherboards-components/:productLine/:series/:model",
+              "www.asus.com/:region/networking-iot-servers/:productLine/:series/:model"
+            ],
+            "target": "/driver/:model"
+          },
+          {
+            "source": [
+              "rog.asus.com/laptops/:series/:model/*",
+              "rog.asus.com/motherboards/:series/:model/*",
+              "rog.asus.com/gaming-handhelds/:series/:model/*",
+              "rog.asus.com/desktops/:series/:model/*",
+              "rog.asus.com/:region/laptops/:series/:model/*",
+              "rog.asus.com/:region/motherboards/:series/:model/*",
+              "rog.asus.com/:region/gaming-handhelds/:series/:model/*",
+              "rog.asus.com/:region/desktops/:series/:model/*"
+            ],
+            "target": "/driver/:model"
+          }
+        ],
+        "name": "Driver",
+        "maintainers": [
+          "regulad"
+        ],
+        "url": "www.asus.com",
+        "description": "Lists the drivers and utilities ASUS publishes for the product on one operating system. If an `os` ID is not available for the product, the error message lists the IDs that are.",
+        "location": "driver.ts",
+        "module": "() => import('@/routes/asus/driver.ts')"
       },
       "/gpu-tweak": {
         "path": "/gpu-tweak",
@@ -37213,44 +36993,6 @@
     "url": "bcg.com",
     "lang": "en"
   },
-  "bdys": {
-    "routes": {
-      "/:caty?/:type?/:area?/:year?/:order?": {
-        "path": "/:caty?/:type?/:area?/:year?/:order?",
-        "categories": [
-          "multimedia"
-        ],
-        "example": "/bdys",
-        "parameters": {
-          "caty": "影视类型，见下表，默认为 `all` 即不限",
-          "type": "资源分类，见下表，默认为 `all` 即不限",
-          "area": "制片地区，见下表，默认为 `all` 即不限",
-          "year": "上映时间，此处填写年份不小于2000，默认为 `all` 即不限",
-          "order": "影视排序，见下表，默认为更新时间"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": true,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "name": "首页",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "description": "#### 资源分类\n\n| 不限 | 电影 | 电视剧 |\n| ---- | ---- | ------ |\n| all  | 0    | 1      |\n\n#### 影视类型\n\n| 不限 | 动作    | 爱情   | 喜剧 | 科幻   | 恐怖   |\n| ---- | ------- | ------ | ---- | ------ | ------ |\n| all  | dongzuo | aiqing | xiju | kehuan | kongbu |\n\n| 战争      | 武侠  | 魔幻   | 剧情   | 动画    | 惊悚     |\n| --------- | ----- | ------ | ------ | ------- | -------- |\n| zhanzheng | wuxia | mohuan | juqing | donghua | jingsong |\n\n| 3D | 灾难   | 悬疑   | 警匪    | 文艺  | 青春     |\n| -- | ------ | ------ | ------- | ----- | -------- |\n| 3D | zainan | xuanyi | jingfei | wenyi | qingchun |\n\n| 冒险    | 犯罪   | 纪录 | 古装     | 奇幻   | 国语  |\n| ------- | ------ | ---- | -------- | ------ | ----- |\n| maoxian | fanzui | jilu | guzhuang | qihuan | guoyu |\n\n| 综艺   | 历史  | 运动    | 原创压制   |\n| ------ | ----- | ------- | ---------- |\n| zongyi | lishi | yundong | yuanchuang |\n\n| 美剧  | 韩剧  | 国产电视剧 | 日剧 | 英剧   | 德剧 |\n| ----- | ----- | ---------- | ---- | ------ | ---- |\n| meiju | hanju | guoju      | riju | yingju | deju |\n\n| 俄剧 | 巴剧 | 加剧  | 西剧    | 意大利剧 | 泰剧  |\n| ---- | ---- | ----- | ------- | -------- | ----- |\n| eju  | baju | jiaju | spanish | yidaliju | taiju |\n\n| 港台剧    | 法剧 | 澳剧 |\n| --------- | ---- | ---- |\n| gangtaiju | faju | aoju |\n\n#### 制片地区\n\n| 大陆 | 中国香港 | 中国台湾 |\n| ---- | -------- | -------- |\n\n| 美国 | 英国 | 日本 | 韩国 | 法国 |\n| ---- | ---- | ---- | ---- | ---- |\n\n| 印度 | 德国 | 西班牙 | 意大利 | 澳大利亚 |\n| ---- | ---- | ------ | ------ | -------- |\n\n| 比利时 | 瑞典 | 荷兰 | 丹麦 | 加拿大 | 俄罗斯 |\n| ------ | ---- | ---- | ---- | ------ | ------ |\n\n#### 影视排序\n\n| 更新时间 | 豆瓣评分 |\n| -------- | -------- |\n| 0        | 1        |",
-        "location": "index.tsx",
-        "module": "() => import('@/routes/bdys/index.tsx')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "哔嘀影视",
-    "url": "52bdys.com",
-    "description": "::: tip\n哔嘀影视有多个备用域名，路由默认使用域名 `https://bdys01.com`。若该域名无法访问，可以通过在路由最后加上 `?domain=<域名>` 指定路由访问的域名。如指定备用域名为 `https://bde4.icu`，则在所有哔嘀影视路由最后加上 `?domain=bde4.icu` 即可，此时路由为 [`/bdys?domain=bde4.icu`](https://rsshub.app/bdys?domain=bde4.icu)\n:::",
-    "lang": "zh-CN"
-  },
   "beijingprice": {
     "routes": {
       "/:category{.+}?": {
@@ -39227,47 +38969,6 @@
     "name": "BT影视",
     "url": "www.btbtla.com",
     "description": "BT 影视的页面内容，最近更新列表，视频种子列表。"
-  },
-  "btzj": {
-    "routes": {
-      "/:category?": {
-        "path": "/:category?",
-        "categories": [
-          "multimedia"
-        ],
-        "example": "/btzj",
-        "parameters": {
-          "category": "分类，可在对应分类页 URL 中找到，默认为首页"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "btbtt20.com/"
-            ]
-          }
-        ],
-        "name": "分类",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "url": "btbtt20.com/",
-        "description": "::: tip\n分类页中域名末尾到 `.htm` 前的字段即为对应分类，如 [电影](https://www.btbtt20.com/forum-index-fid-951.htm) `https://www.btbtt20.com/forum-index-fid-951.htm` 中域名末尾到 `.htm` 前的字段为 `forum-index-fid-951`，所以路由应为 [`/btzj/forum-index-fid-951`](https://rsshub.app/btzj/forum-index-fid-951)\n\n部分分类页，如 [电影](https://www.btbtt20.com/forum-index-fid-951.htm)、[剧集](https://www.btbtt20.com/forum-index-fid-950.htm) 等，提供了更复杂的分类筛选。你可以将选项选中后，获得结果分类页 URL 中分类参数，构成路由。如选中分类 [高清电影 - 年份：2021 - 地区：欧美](https://www.btbtt20.com/forum-index-fid-1183-typeid1-0-typeid2-738-typeid3-10086-typeid4-0.htm) `https://www.btbtt20.com/forum-index-fid-1183-typeid1-0-typeid2-738-typeid3-10086-typeid4-0.htm` 中域名末尾到 `.htm` 前的字段为 `forum-index-fid-1183-typeid1-0-typeid2-738-typeid3-10086-typeid4-0`，所以路由应为 [`/btzj/forum-index-fid-1183-typeid1-0-typeid2-738-typeid3-10086-typeid4-0`](https://rsshub.app/btzj/forum-index-fid-1183-typeid1-0-typeid2-738-typeid3-10086-typeid4-0)\n:::\n\n基础分类如下：\n\n| 交流                | 电影                | 剧集                | 高清电影             |\n| ------------------- | ------------------- | ------------------- | -------------------- |\n| forum-index-fid-975 | forum-index-fid-951 | forum-index-fid-950 | forum-index-fid-1183 |\n\n| 音乐                | 动漫                | 游戏                | 综艺                 |\n| ------------------- | ------------------- | ------------------- | -------------------- |\n| forum-index-fid-953 | forum-index-fid-981 | forum-index-fid-955 | forum-index-fid-1106 |\n\n| 图书                 | 美图                | 站务              | 科技                |\n| -------------------- | ------------------- | ----------------- | ------------------- |\n| forum-index-fid-1151 | forum-index-fid-957 | forum-index-fid-2 | forum-index-fid-952 |\n\n| 求助                 | 音轨字幕             |\n| -------------------- | -------------------- |\n| forum-index-fid-1187 | forum-index-fid-1191 |\n\n::: tip\nBT 之家的域名会变更，本路由以 `https://www.btbtt20.com` 为默认域名，若该域名无法访问，可以通过在路由后方加上 `?domain=<域名>` 指定路由访问的域名。如指定域名为 `https://www.btbtt15.com`，则在 `/btzj` 后加上 `?domain=btbtt15.com` 即可，此时路由为 [`/btzj?domain=btbtt15.com`](https://rsshub.app/btzj?domain=btbtt15.com)\n\n如果加入了分类参数，直接在分类参数后加入 `?domain=<域名>` 即可。如指定分类 [剧集](https://www.btbtt20.com/forum-index-fid-950.htm) `https://www.btbtt20.com/forum-index-fid-950.htm` 并指定域名为 `https://www.btbtt15.com`，即在 `/btzj/forum-index-fid-950` 后加上 `?domain=btbtt15.com`，此时路由为 [`/btzj/forum-index-fid-950?domain=btbtt15.com`](https://rsshub.app/btzj/forum-index-fid-950?domain=btbtt15.com)\n\n目前，你可以选择的域名有 `btbtt10-20.com` 共 10 个，或 `88btbbt.com`，该站也提供了专用网址查询工具。详见 [此贴](https://www.btbtt20.com/thread-index-fid-2-tid-4550191.htm)\n:::",
-        "location": "index.tsx",
-        "module": "() => import('@/routes/btzj/index.tsx')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "BT 之家",
-    "url": "btbtt20.com",
-    "lang": "zh-CN"
   },
   "buaa": {
     "routes": {
@@ -42790,45 +42491,6 @@
     "apiRoutes": {},
     "name": "华中师范大学",
     "url": "www.ccnu.edu.cn",
-    "lang": "zh-CN"
-  },
-  "ccreports": {
-    "routes": {
-      "/article": {
-        "path": "/article",
-        "categories": [
-          "shopping"
-        ],
-        "example": "/ccreports/article",
-        "parameters": {},
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "www.ccreports.com.cn/"
-            ]
-          }
-        ],
-        "name": "要闻",
-        "maintainers": [
-          "EsuRt",
-          "Fatpandac"
-        ],
-        "url": "www.ccreports.com.cn/",
-        "location": "index.ts",
-        "module": "() => import('@/routes/ccreports/index.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "消费者报道",
-    "url": "www.ccreports.com.cn",
     "lang": "zh-CN"
   },
   "cczu": {
@@ -48204,6 +47866,60 @@
       }
     },
     "apiRoutes": {}
+  },
+  "cohere": {
+    "routes": {
+      "/blog": {
+        "path": "/blog",
+        "name": "Blog",
+        "url": "cohere.com/blog",
+        "maintainers": [
+          "Loongphy",
+          "ljh12138164"
+        ],
+        "example": "/cohere/blog",
+        "parameters": {},
+        "description": "Full-text articles from the Cohere Blog (merging both official CMS sources), including key takeaways, formulas, FAQs, code blocks, tables, and embedded media. Fetches 20 entries by default; use the common `limit` query parameter (1-100) to adjust.",
+        "zh": {
+          "name": "博客",
+          "parameters": {},
+          "description": "合并读取 Cohere 官方博客双 CMS 接口获取英文全文，包含要点总结、公式、FAQ 问答、代码块、表格与内嵌媒体。默认获取 20 篇，可通过通用 `limit` 参数（1-100）调整条数。"
+        },
+        "categories": [
+          "blog"
+        ],
+        "view": 0,
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "cohere.com/blog",
+              "cohere.com/blog/:slug"
+            ],
+            "target": "/blog"
+          }
+        ],
+        "location": "index.ts",
+        "module": "() => import('@/routes/cohere/index.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Cohere",
+    "url": "cohere.com",
+    "lang": "en",
+    "description": "Enterprise AI platform building frontier foundation models, retrieval systems, and agentic workspaces.",
+    "zh": {
+      "name": "Cohere",
+      "description": "Cohere 是专注于企业级大语言模型、检索系统与智能体工作区的 AI 平台。"
+    }
   },
   "cointelegraph": {
     "routes": {
@@ -56259,40 +55975,6 @@
   },
   "eastday": {
     "routes": {
-      "/24/:category?": {
-        "path": "/24/:category?",
-        "categories": [
-          "traditional-media"
-        ],
-        "example": "/eastday/24",
-        "parameters": {
-          "category": "分类，见下表，默认为社会"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "mini.eastday.com/"
-            ],
-            "target": "/24"
-          }
-        ],
-        "name": "24 小时热闻",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "url": "mini.eastday.com/",
-        "description": "| 推荐 | 社会 | 娱乐 | 国际 | 军事 |\n| ---- | ---- | ---- | ---- | ---- |\n\n| 养生 | 汽车 | 体育 | 财经 | 游戏 |\n| ---- | ---- | ---- | ---- | ---- |\n\n| 科技 | 国内 | 宠物 | 情感 | 人文 | 教育 |\n| ---- | ---- | ---- | ---- | ---- | ---- |",
-        "location": "24.ts",
-        "module": "() => import('@/routes/eastday/24.ts')"
-      },
       "/portrait": {
         "path": "/portrait",
         "categories": [
@@ -61540,44 +61222,6 @@
     "url": "news.gamebase.com.tw",
     "lang": "zh-TW"
   },
-  "gamegene": {
-    "routes": {
-      "/news": {
-        "path": "/news",
-        "categories": [
-          "game"
-        ],
-        "example": "/gamegene/news",
-        "parameters": {},
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "news.gamegene.cn/news"
-            ]
-          }
-        ],
-        "name": "资讯",
-        "maintainers": [
-          "lone1y-51"
-        ],
-        "url": "news.gamegene.cn/news",
-        "location": "news.ts",
-        "module": "() => import('@/routes/gamegene/news.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "游戏基因",
-    "url": "gamegene.cn",
-    "lang": "zh-CN"
-  },
   "gamer520": {
     "routes": {
       "/:category?/:order?": {
@@ -65412,6 +65056,39 @@
     "apiRoutes": {},
     "name": "Grist",
     "url": "grist.org",
+    "lang": "en"
+  },
+  "groq": {
+    "routes": {
+      "/blog": {
+        "path": "/blog",
+        "categories": [
+          "programming"
+        ],
+        "example": "/groq/blog",
+        "name": "Blog",
+        "maintainers": [
+          "ljh12138164"
+        ],
+        "description": "Full articles from the Groq blog, including news listed on the blog page. Follows the page order and fetches 20 entries by default. Use the common `limit` parameter to adjust the count.",
+        "zh": {
+          "name": "博客",
+          "description": "获取 Groq 官方博客及该页面所列新闻的英文全文。按页面顺序默认获取 20 篇，可通过通用参数 `limit` 调整。"
+        },
+        "radar": [
+          {
+            "source": [
+              "groq.com/blog"
+            ]
+          }
+        ],
+        "location": "blog.ts",
+        "module": "() => import('@/routes/groq/blog.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Groq",
+    "url": "groq.com",
     "lang": "en"
   },
   "gs": {
@@ -72540,6 +72217,29 @@
     "url": "iguoguo.net",
     "lang": "zh-CN"
   },
+  "iheima": {
+    "routes": {
+      "/recommend": {
+        "path": "/recommend",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/iheima/recommend",
+        "url": "www.iheima.com",
+        "name": "推荐",
+        "maintainers": [
+          "p3psi-boo"
+        ],
+        "location": "index.ts",
+        "module": "() => import('@/routes/iheima/index.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "i黑马网",
+    "url": "www.iheima.com",
+    "description": "",
+    "lang": "zh-CN"
+  },
   "iiilab": {
     "routes": {
       "/": {
@@ -78881,7 +78581,7 @@
     },
     "apiRoutes": {},
     "name": "金诚同达律师事务所",
-    "url": "jtn.com",
+    "url": "www.jtn.com",
     "categories": [
       "other"
     ],
@@ -81953,40 +81653,6 @@
     "categories": [
       "new-media"
     ],
-    "lang": "zh-CN"
-  },
-  "lightnovel": {
-    "routes": {
-      "/:keywords/:security_key?": {
-        "path": "/:keywords/:security_key?",
-        "categories": [
-          "anime"
-        ],
-        "example": "/lightnovel/歡迎來到實力至上主義的教室/3cfc2dc63f3575ee42e12823188ad1b5:1709125:0",
-        "parameters": {
-          "keywords": "关键字，可以模糊匹配，但最好精确匹配",
-          "security_key": "cookie,由于文章有防爬，所以必须携带cookie请求。route中的cookie优先级高于环境变量cookie，取token中的security_key值"
-        },
-        "radar": [
-          {
-            "source": [
-              "lightNovel.us/"
-            ],
-            "target": "/:keywords/:security_key"
-          }
-        ],
-        "name": "文章更新阅读",
-        "maintainers": [
-          "nightmare-mio"
-        ],
-        "url": "lightNovel.us/",
-        "location": "light-novel.ts",
-        "module": "() => import('@/routes/lightnovel/light-novel.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "轻之国度",
-    "url": "lightNovel.us",
     "lang": "zh-CN"
   },
   "lineageos": {
@@ -87058,6 +86724,181 @@
       "name": "上海市闵行区博物馆"
     }
   },
+  "minimax": {
+    "routes": {
+      "/blog/:lang?": {
+        "path": "/blog/:lang?",
+        "name": "Blog",
+        "url": "minimax.io/blog",
+        "example": "/minimax/blog",
+        "categories": [
+          "programming"
+        ],
+        "view": 0,
+        "maintainers": [
+          "ljh12138164"
+        ],
+        "parameters": {
+          "lang": {
+            "description": "Site language edition (`en` for `minimax.io`, `zh-CN` for `minimax.cn`).",
+            "default": "en",
+            "options": [
+              {
+                "value": "en",
+                "label": "English (minimax.io)"
+              },
+              {
+                "value": "zh-CN",
+                "label": "中文 (minimax.cn)"
+              }
+            ]
+          }
+        },
+        "description": "Full-text official blog and research articles from MiniMax (`minimax.io/blog` by default, or `minimax.cn/blog` with `zh-CN`). Supports the common `limit` parameter.",
+        "zh": {
+          "name": "博客",
+          "parameters": {
+            "lang": {
+              "description": "站点语言版本（默认 `en` 对应英文站 `minimax.io`，`zh-CN` 对应中文站 `minimax.cn`）。",
+              "default": "en",
+              "options": [
+                {
+                  "value": "en",
+                  "label": "English (minimax.io)"
+                },
+                {
+                  "value": "zh-CN",
+                  "label": "中文 (minimax.cn)"
+                }
+              ]
+            }
+          },
+          "description": "获取 MiniMax 官方博客与技术研究文章全文（默认英文站 `minimax.io/blog`，传入 `zh-CN` 可切换至中文站 `minimax.cn/blog`），支持通用 `limit` 参数。"
+        },
+        "radar": [
+          {
+            "source": [
+              "minimax.io/blog",
+              "www.minimax.io/blog",
+              "minimax.io/blog/:slug",
+              "www.minimax.io/blog/:slug"
+            ],
+            "target": "/blog"
+          },
+          {
+            "source": [
+              "minimax.cn/blog",
+              "www.minimax.cn/blog",
+              "minimax.cn/blog/:slug",
+              "www.minimax.cn/blog/:slug"
+            ],
+            "target": "/blog/zh-CN"
+          }
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false,
+          "supportRadar": true
+        },
+        "location": "blog.ts",
+        "module": "() => import('@/routes/minimax/blog.ts')"
+      },
+      "/news/:lang?": {
+        "path": "/news/:lang?",
+        "name": "News",
+        "url": "minimax.io/news",
+        "example": "/minimax/news",
+        "categories": [
+          "programming"
+        ],
+        "view": 0,
+        "maintainers": [
+          "ljh12138164"
+        ],
+        "parameters": {
+          "lang": {
+            "description": "Site language edition (`en` for `minimax.io`, `zh-CN` for `minimax.cn`).",
+            "default": "en",
+            "options": [
+              {
+                "value": "en",
+                "label": "English (minimax.io)"
+              },
+              {
+                "value": "zh-CN",
+                "label": "中文 (minimax.cn)"
+              }
+            ]
+          }
+        },
+        "description": "Full-text official news and announcements from MiniMax (`minimax.io/news` by default, or `minimax.cn/news` with `zh-CN`), supporting both modern and legacy article layouts and the common `limit` parameter.",
+        "zh": {
+          "name": "新闻",
+          "parameters": {
+            "lang": {
+              "description": "站点语言版本（默认 `en` 对应英文站 `minimax.io`，`zh-CN` 对应中文站 `minimax.cn`）。",
+              "default": "en",
+              "options": [
+                {
+                  "value": "en",
+                  "label": "English (minimax.io)"
+                },
+                {
+                  "value": "zh-CN",
+                  "label": "中文 (minimax.cn)"
+                }
+              ]
+            }
+          },
+          "description": "获取 MiniMax 官方新闻、公告与生态动态全文（默认英文站 `minimax.io/news`，传入 `zh-CN` 可切换至中文站 `minimax.cn/news`），支持通用 `limit` 参数。"
+        },
+        "radar": [
+          {
+            "source": [
+              "minimax.io/news",
+              "www.minimax.io/news",
+              "minimax.io/news/:slug",
+              "www.minimax.io/news/:slug"
+            ],
+            "target": "/news"
+          },
+          {
+            "source": [
+              "minimax.cn/news",
+              "www.minimax.cn/news",
+              "minimax.cn/news/:slug",
+              "www.minimax.cn/news/:slug"
+            ],
+            "target": "/news/zh-CN"
+          }
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false,
+          "supportRadar": true
+        },
+        "location": "news.ts",
+        "module": "() => import('@/routes/minimax/news.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "MiniMax",
+    "url": "minimax.io",
+    "lang": "en",
+    "description": "Official blog posts, research updates, and company news from MiniMax.",
+    "zh": {
+      "name": "MiniMax",
+      "description": "MiniMax（稀宇科技）官方博客、技术研究与新闻动态。"
+    }
+  },
   "missav": {
     "routes": {
       "/new": {
@@ -87104,6 +86945,51 @@
     "name": "MissAV",
     "url": "missav.ws",
     "lang": "en"
+  },
+  "mistral": {
+    "routes": {
+      "/news": {
+        "path": "/news",
+        "categories": [
+          "programming"
+        ],
+        "example": "/mistral/news",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "mistral.ai/news",
+              "mistral.ai/news/rss"
+            ],
+            "target": "/news"
+          }
+        ],
+        "name": "News",
+        "maintainers": [
+          "ljh12138164"
+        ],
+        "url": "mistral.ai/news",
+        "location": "news.ts",
+        "module": "() => import('@/routes/mistral/news.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Mistral AI",
+    "url": "mistral.ai",
+    "description": "The official Mistral news RSS (`https://mistral.ai/news/rss`) only contains short summaries. Routes here fetch the full article text.",
+    "lang": "en",
+    "zh": {
+      "name": "Mistral AI",
+      "description": "Mistral 官方新闻 RSS（`https://mistral.ai/news/rss`）只包含简短摘要，此处的路由会抓取文章全文。"
+    }
   },
   "mit": {
     "routes": {
@@ -90052,13 +89938,18 @@
   },
   "ndss-symposium": {
     "routes": {
-      "/ndss": {
-        "path": "/ndss",
+      "/ndss/:abstract?": {
+        "path": "/ndss/:abstract?",
         "categories": [
           "journal"
         ],
         "example": "/ndss-symposium/ndss",
-        "parameters": {},
+        "parameters": {
+          "abstract": {
+            "description": "Set to `1` to fetch abstracts for every accepted paper. The default `0` returns titles and authors only.",
+            "default": "0"
+          }
+        },
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
@@ -90076,10 +89967,11 @@
         ],
         "name": "Accepted papers",
         "maintainers": [
-          "ZeddYu"
+          "ZeddYu",
+          "yuguorui"
         ],
         "url": "ndss-symposium.org/",
-        "description": "Accepted papers from the latest symposium and workshop pages.",
+        "description": "Set `abstract` to `1` to include paper abstracts, taken from the detailed program page or, when a paper is missing there, from its own page.",
         "location": "ndss.ts",
         "module": "() => import('@/routes/ndss-symposium/ndss.ts')"
       }
@@ -91131,49 +91023,6 @@
     "name": "New Yorker",
     "url": "newyorker.com",
     "lang": "en"
-  },
-  "newzmz": {
-    "routes": {
-      "/:id?/:downLinkType?": {
-        "path": "/:id?/:downLinkType?",
-        "categories": [
-          "multimedia"
-        ],
-        "example": "/newzmz/qEzRyY3v",
-        "parameters": {
-          "id": "剧集 id，可在剧集下载页 URL 中找到",
-          "downLinkType": "下载链接类型，默认为磁力链"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "newzmz.com/"
-            ],
-            "target": ""
-          }
-        ],
-        "name": "指定剧集",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "url": "newzmz.com/",
-        "description": "::: tip\n[雪国列车 (剧版)](https://nzmz.xyz/details-qEzRyY3v.html) 的下载页 URL 为 `https://v.ys99.xyz/view/qEzRyY3v.html`，即剧集 id 为 `qEzRyY3v`\n:::",
-        "location": "index.ts",
-        "module": "() => import('@/routes/newzmz/index.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "NEW 字幕组",
-    "url": "newzmz.com",
-    "lang": "zh-CN"
   },
   "nextapple": {
     "routes": {
@@ -95739,7 +95588,8 @@
         "example": "/nytimes/rss/HomePage",
         "parameters": {
           "cat": {
-            "description": "Category name, corresponding to the last segment of [official feed's](https://www.nytimes.com/rss) url."
+            "description": "Category name, corresponding to the last segment of [official feed's](https://www.nytimes.com/rss) url.",
+            "default": "HomePage"
           }
         },
         "features": {
@@ -102458,12 +102308,12 @@
   },
   "producthunt": {
     "routes": {
-      "/today": {
-        "path": "/today",
+      "/feed": {
+        "path": "/feed",
         "categories": [
           "other"
         ],
-        "example": "/producthunt/today",
+        "example": "/producthunt/feed",
         "features": {
           "requireConfig": false,
           "requirePuppeteer": false,
@@ -102472,6 +102322,36 @@
           "supportPodcast": false,
           "supportScihub": false
         },
+        "name": "Official Feed",
+        "maintainers": [
+          "miaoyafeng",
+          "Fatpandac"
+        ],
+        "url": "www.producthunt.com/feed/",
+        "location": "feed.ts",
+        "module": "() => import('@/routes/producthunt/feed.ts')"
+      },
+      "/today": {
+        "path": "/today",
+        "categories": [
+          "other"
+        ],
+        "example": "/producthunt/today",
+        "features": {
+          "requireConfig": [
+            {
+              "name": "PRODUCTHUNT_ACCESS_TOKEN",
+              "description": "Optional API access token for the featured daily list when the website is unavailable. See [Product Hunt API documentation](https://api.producthunt.com/v2/docs).",
+              "optional": true
+            }
+          ],
+          "requirePuppeteer": false,
+          "antiCrawler": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "description": "Top products from the publisher’s Today list. The general Product Hunt feed is also available at `/producthunt/feed`.",
         "radar": [
           {
             "source": [
@@ -102743,96 +102623,6 @@
     "categories": [
       "game"
     ]
-  },
-  "psyche": {
-    "routes": {
-      "/topic/:topic": {
-        "path": "/topic/:topic",
-        "categories": [
-          "new-media"
-        ],
-        "example": "/psyche/topic/therapeia",
-        "parameters": {
-          "topic": "Topic"
-        },
-        "radar": [
-          {
-            "source": [
-              "psyche.co/therapeia"
-            ],
-            "target": "/topic/therapeia"
-          },
-          {
-            "source": [
-              "psyche.co/eudaimonia"
-            ],
-            "target": "/topic/eudaimonia"
-          },
-          {
-            "source": [
-              "psyche.co/poiesis"
-            ],
-            "target": "/topic/poiesis"
-          }
-        ],
-        "name": "Topics",
-        "maintainers": [
-          "emdoe"
-        ],
-        "description": "Supported categories: Therapeia, Eudaimonia, and Poiesis.",
-        "location": "topic.ts",
-        "module": "() => import('@/routes/psyche/topic.ts')"
-      },
-      "/type/:type": {
-        "path": "/type/:type",
-        "categories": [
-          "new-media"
-        ],
-        "example": "/psyche/type/ideas",
-        "parameters": {
-          "type": "Type"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "psyche.co/ideas"
-            ],
-            "target": "/type/ideas"
-          },
-          {
-            "source": [
-              "psyche.co/guides"
-            ],
-            "target": "/type/guides"
-          },
-          {
-            "source": [
-              "psyche.co/films"
-            ],
-            "target": "/type/films"
-          }
-        ],
-        "name": "Types",
-        "maintainers": [
-          "emdoe"
-        ],
-        "description": "Supported types: Ideas, Guides, and Films.",
-        "location": "type.ts",
-        "module": "() => import('@/routes/psyche/type.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "Psyche",
-    "url": "psyche.co",
-    "lang": "en"
   },
   "publico": {
     "routes": {
@@ -105786,7 +105576,7 @@
         "categories": [
           "bbs"
         ],
-        "example": "/right/forum/31",
+        "example": "/right/forum/171",
         "parameters": {
           "id": "板块 id，可在板块页 URL 中找到，默认为新手入门及其它(硬件)"
         },
@@ -107345,8 +107135,8 @@
         },
         "features": {
           "requireConfig": false,
-          "requirePuppeteer": true,
-          "antiCrawler": true,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
           "supportBT": false,
           "supportPodcast": false,
           "supportScihub": true
@@ -107365,7 +107155,7 @@
           "y9c",
           "TonyRL"
         ],
-        "description": "|  Short name |    Full name of the journal    | Route                                                                          |\n| :---------: | :----------------------------: | ------------------------------------------------------------------------------ |\n|   science   |             Science            | [/science/current/science](https://rsshub.app/science/current/science)         |\n|    sciadv   |        Science Advances        | [/science/current/sciadv](https://rsshub.app/science/current/sciadv)           |\n|  sciimmunol |       Science Immunology       | [/science/current/sciimmunol](https://rsshub.app/science/current/sciimmunol)   |\n| scirobotics |        Science Robotics        | [/science/current/scirobotics](https://rsshub.app/science/current/scirobotics) |\n|  signaling  |        Science Signaling       | [/science/current/signaling](https://rsshub.app/science/current/signaling)     |\n|     stm     | Science Translational Medicine | [/science/current/stm](https://rsshub.app/science/current/stm)                 |\n\n- Using route (`/science/current/` + \"short name for a journal\") to get current issue of a journal from AAAS.\n- Leaving it empty (`/science/current`) to get update from Science.",
+        "description": "|  Short name |    Full name of the journal    | Route                                                                          |\n| :---------: | :----------------------------: | ------------------------------------------------------------------------------ |\n|   science   |             Science            | [/science/current/science](https://rsshub.app/science/current/science)         |\n|    sciadv   |        Science Advances        | [/science/current/sciadv](https://rsshub.app/science/current/sciadv)           |\n|  sciimmunol |       Science Immunology       | [/science/current/sciimmunol](https://rsshub.app/science/current/sciimmunol)   |\n| scirobotics |        Science Robotics        | [/science/current/scirobotics](https://rsshub.app/science/current/scirobotics) |\n|  signaling  |        Science Signaling       | [/science/current/signaling](https://rsshub.app/science/current/signaling)     |\n|     stm     | Science Translational Medicine | [/science/current/stm](https://rsshub.app/science/current/stm)                 |\n\n- Using route (`/science/current/` + \"short name for a journal\") to get current issue of a journal from AAAS.\n- Leaving it empty (`/science/current`) to get update from Science.\n- Abstracts are included when available from Crossref.",
         "location": "current.ts",
         "module": "() => import('@/routes/science/current.ts')"
       },
@@ -111242,8 +111032,8 @@
   },
   "sigsac": {
     "routes": {
-      "/ccs": {
-        "path": "/ccs",
+      "/ccs/:year?": {
+        "path": "/ccs/:year?",
         "categories": [
           "journal"
         ],
@@ -111258,10 +111048,14 @@
         ],
         "name": "The ACM Conference on Computer and Communications Security",
         "maintainers": [
-          "ZeddYu"
+          "ZeddYu",
+          "yuguorui"
         ],
         "url": "sigsac.org/ccs.html",
-        "description": "Return results from 2020",
+        "description": "Return accepted papers from 2020 through the current year + 1. Specify a year in the path to return a single year.",
+        "parameters": {
+          "year": "4-digit year, for example `2026`. Without it, all available years from 2020 through the current year + 1 are returned."
+        },
         "location": "ccs.ts",
         "module": "() => import('@/routes/sigsac/ccs.ts')"
       }
@@ -113092,7 +112886,7 @@
         "parameters": {
           "category": "分类，默认为最新规则，即 `latest`，可在对应分类页 URL 中找到"
         },
-        "description": "::: tip\n若订阅 [最新规则](https://www.sse.com.cn/lawandrules/sselawsrules/latest/)，网址为 `https://www.sse.com.cn/lawandrules/sselawsrules/latest/`。截取 `https://www.sse.com.cn/lawandrules/sselawsrules/` 到末尾 `/` 的部分 `latest` 作为参数填入，此时路由为 [`/sse/sselawsrules/latest`](https://rsshub.app/sse/sselawsrules/latest)。\n:::\n\n| [最新规则](https://www.sse.com.cn/lawandrules/sselawsrules/latest/) | [章程](https://www.sse.com.cn/lawandrules/sselawsrules/article/) | [首发](https://www.sse.com.cn/lawandrules/sselawsrules/stocks/review/firstepisode/)          | [再融资](https://www.sse.com.cn/lawandrules/sselawsrules/stocks/review/refinancing/)       | [重组](https://www.sse.com.cn/lawandrules/sselawsrules/stocks/review/recombination/)           |\n| ------------------------------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |\n| [latest](https://rsshub.app/sse/sselawsrules/latest)                | [article](https://rsshub.app/sse/sselawsrules/article)           | [stocks/review/firstepisode](https://rsshub.app/sse/sselawsrules/stocks/review/firstepisode) | [stocks/review/refinancing](https://rsshub.app/sse/sselawsrules/stocks/review/refinancing) | [stocks/review/recombination](https://rsshub.app/sse/sselawsrules/stocks/review/recombination) |\n\n| [转板](https://www.sse.com.cn/lawandrules/sselawsrules/stocks/review/flap/)  | [发行承销](https://www.sse.com.cn/lawandrules/sselawsrules/stocks/issue/) | [主板上市（挂牌）](https://www.sse.com.cn/lawandrules/sselawsrules/stocks/mainipo/) | [科创板上市（挂牌）](https://www.sse.com.cn/lawandrules/sselawsrules/stocks/staripo/) | [股票交易](https://www.sse.com.cn/lawandrules/sselawsrules/stocks/exchange/) |\n| ---------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |\n| [stocks/review/flap](https://rsshub.app/sse/sselawsrules/stocks/review/flap) | [stocks/issue](https://rsshub.app/sse/sselawsrules/stocks/issue)          | [stocks/mainipo](https://rsshub.app/sse/sselawsrules/stocks/mainipo)                | [stocks/staripo](https://rsshub.app/sse/sselawsrules/stocks/staripo)                  | [stocks/exchange](https://rsshub.app/sse/sselawsrules/stocks/exchange)       |\n\n| [试点创新企业](https://www.sse.com.cn/lawandrules/sselawsrules/stocks/innovative/) | [股权分置改革](https://www.sse.com.cn/lawandrules/sselawsrules/stocks/reform/) | [发行上市审核](https://www.sse.com.cn/lawandrules/sselawsrules/bond/review/) | [发行承销](https://www.sse.com.cn/lawandrules/sselawsrules/bond/issue/) | [公司债券上市（挂牌）](https://www.sse.com.cn/lawandrules/sselawsrules/bond/listing/corporatebond/) |\n| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |\n| [stocks/innovative](https://rsshub.app/sse/sselawsrules/stocks/innovative)         | [stocks/reform](https://rsshub.app/sse/sselawsrules/stocks/reform)             | [bond/review](https://rsshub.app/sse/sselawsrules/bond/review)               | [bond/issue](https://rsshub.app/sse/sselawsrules/bond/issue)            | [bond/listing/corporatebond](https://rsshub.app/sse/sselawsrules/bond/listing/corporatebond)        |\n\n| [资产支持证券上市（挂牌）](https://www.sse.com.cn/lawandrules/sselawsrules/bond/listing/assets/) | [债券交易通用](https://www.sse.com.cn/lawandrules/sselawsrules/bond/trading/currency/) | [国债预发行](https://www.sse.com.cn/lawandrules/sselawsrules/bond/trading/tbondp/) | [债券质押式三方回购](https://www.sse.com.cn/lawandrules/sselawsrules/bond/trading/tripartyrepo/) | [债券质押式协议回购](https://www.sse.com.cn/lawandrules/sselawsrules/bond/trading/repurchase/) |\n| ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |\n| [bond/listing/assets](https://rsshub.app/sse/sselawsrules/bond/listing/assets)                   | [bond/trading/currency](https://rsshub.app/sse/sselawsrules/bond/trading/currency)     | [bond/trading/tbondp](https://rsshub.app/sse/sselawsrules/bond/trading/tbondp)     | [bond/trading/tripartyrepo](https://rsshub.app/sse/sselawsrules/bond/trading/tripartyrepo)       | [bond/trading/repurchase](https://rsshub.app/sse/sselawsrules/bond/trading/repurchase)         |\n\n| [国债买断式回购交易](https://www.sse.com.cn/lawandrules/sselawsrules/bond/trading/outrightrepo/) | [信用保护工具](https://www.sse.com.cn/lawandrules/sselawsrules/bond/trading/cdx/) | [上市公司可转债](https://www.sse.com.cn/lawandrules/sselawsrules/bond/convertible/) | [基金上市](https://www.sse.com.cn/lawandrules/sselawsrules/fund/listing/) | [基金交易](https://www.sse.com.cn/lawandrules/sselawsrules/fund/trading/) |\n| ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |\n| [bond/trading/outrightrepo](https://rsshub.app/sse/sselawsrules/bond/trading/outrightrepo)       | [bond/trading/cdx](https://rsshub.app/sse/sselawsrules/bond/trading/cdx)          | [bond/convertible](https://rsshub.app/sse/sselawsrules/bond/convertible)            | [fund/listing](https://rsshub.app/sse/sselawsrules/fund/listing)          | [fund/trading](https://rsshub.app/sse/sselawsrules/fund/trading)          |\n\n| [基础设施公募 REITs](https://www.sse.com.cn/lawandrules/sselawsrules/reits/) | [期权](https://www.sse.com.cn/lawandrules/sselawsrules/option/) | [通用类](https://www.sse.com.cn/lawandrules/sselawsrules/trade/universal/) | [融资融券](https://www.sse.com.cn/lawandrules/sselawsrules/trade/specific/margin/) | [转融通](https://www.sse.com.cn/lawandrules/sselawsrules/trade/specific/refinancing/)        |\n| ---------------------------------------------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |\n| [reits](https://rsshub.app/sse/sselawsrules/reits)                           | [option](https://rsshub.app/sse/sselawsrules/option)            | [trade/universal](https://rsshub.app/sse/sselawsrules/trade/universal)     | [trade/specific/margin](https://rsshub.app/sse/sselawsrules/trade/specific/margin) | [trade/specific/refinancing](https://rsshub.app/sse/sselawsrules/trade/specific/refinancing) |\n\n| [质押式回购](https://www.sse.com.cn/lawandrules/sselawsrules/trade/specific/repo/) | [质押式报价回购](https://www.sse.com.cn/lawandrules/sselawsrules/trade/specific/pricerepo/) | [约定购回](https://www.sse.com.cn/lawandrules/sselawsrules/trade/specific/promise/)  | [协议转让](https://www.sse.com.cn/lawandrules/sselawsrules/trade/specific/xyzr/) | [其他](https://www.sse.com.cn/lawandrules/sselawsrules/trade/specific/others/)     |\n| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |\n| [trade/specific/repo](https://rsshub.app/sse/sselawsrules/trade/specific/repo)     | [trade/specific/pricerepo](https://rsshub.app/sse/sselawsrules/trade/specific/pricerepo)    | [trade/specific/promise](https://rsshub.app/sse/sselawsrules/trade/specific/promise) | [trade/specific/xyzr](https://rsshub.app/sse/sselawsrules/trade/specific/xyzr)   | [trade/specific/others](https://rsshub.app/sse/sselawsrules/trade/specific/others) |\n\n| [沪港通](https://www.sse.com.cn/lawandrules/sselawsrules/global/hkexsc/) | [互联互通存托凭证](https://www.sse.com.cn/lawandrules/sselawsrules/global/slsc/) | [会员管理](https://www.sse.com.cn/lawandrules/sselawsrules/member/personnel/) | [适当性管理](https://www.sse.com.cn/lawandrules/sselawsrules/member/adequacy/) | [纪律处分与复核](https://www.sse.com.cn/lawandrules/sselawsrules/disciplinary/) |\n| ------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |\n| [global/hkexsc](https://rsshub.app/sse/sselawsrules/global/hkexsc)       | [global/slsc](https://rsshub.app/sse/sselawsrules/global/slsc)                   | [member/personnel](https://rsshub.app/sse/sselawsrules/member/personnel)      | [member/adequacy](https://rsshub.app/sse/sselawsrules/member/adequacy)         | [disciplinary](https://rsshub.app/sse/sselawsrules/disciplinary)                |\n\n| [交易收费](https://www.sse.com.cn/lawandrules/sselawsrules/charge/) | [其他业务规则](https://www.sse.com.cn/lawandrules/sselawsrules/other/) | [业务规则废止公告](https://www.sse.com.cn/lawandrules/sserules/repeal/announcement/)                                       | [已废止规则文本](https://www.sse.com.cn/lawandrules/sselawsrules/repeal/rules/) |\n| ------------------------------------------------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |\n| [charge](https://rsshub.app/sse/sselawsrules/charge)                | [other](https://rsshub.app/sse/sselawsrules/other)                     | [/lawandrules/sserules/repeal/announcement](https://rsshub.app/sse/sselawsrules//lawandrules/sserules/repeal/announcement) | [repeal/rules](https://rsshub.app/sse/sselawsrules/repeal/rules)                |",
+        "description": "::: tip\n若订阅 [最新规则](https://www.sse.com.cn/lawandrules/sselawsrules2025/latest/)，网址为 `https://www.sse.com.cn/lawandrules/sselawsrules2025/latest/`。截取 `https://www.sse.com.cn/lawandrules/sselawsrules2025/` 到末尾 `/` 的部分 `latest` 作为参数填入，此时路由为 [`/sse/sselawsrules/latest`](https://rsshub.app/sse/sselawsrules/latest)。\n:::\n\n| [最新规则](https://www.sse.com.cn/lawandrules/sselawsrules2025/latest/) | [章程](https://www.sse.com.cn/lawandrules/sselawsrules2025/article/) | [首发](https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/review/firstepisode/)      | [再融资](https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/review/refinancing/)   | [重组](https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/review/recombination/)       |\n| ----------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |\n| [latest](https://rsshub.app/sse/sselawsrules/latest)                    | [article](https://rsshub.app/sse/sselawsrules/article)               | [stocks/review/firstepisode](https://rsshub.app/sse/sselawsrules/stocks/review/firstepisode) | [stocks/review/refinancing](https://rsshub.app/sse/sselawsrules/stocks/review/refinancing) | [stocks/review/recombination](https://rsshub.app/sse/sselawsrules/stocks/review/recombination) |\n\n| [转板](https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/review/flap/) | [发行承销](https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/issue/) | [主板上市（挂牌）](https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/mainipo/) | [科创板上市（挂牌）](https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/staripo/) | [股票交易](https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/exchange/) |\n| ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |\n| [stocks/review/flap](https://rsshub.app/sse/sselawsrules/stocks/review/flap)    | [stocks/issue](https://rsshub.app/sse/sselawsrules/stocks/issue)              | [stocks/mainipo](https://rsshub.app/sse/sselawsrules/stocks/mainipo)                    | [stocks/staripo](https://rsshub.app/sse/sselawsrules/stocks/staripo)                      | [stocks/exchange](https://rsshub.app/sse/sselawsrules/stocks/exchange)           |\n\n| [试点创新企业](https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/innovative/) | [股权分置改革](https://www.sse.com.cn/lawandrules/sselawsrules2025/stocks/reform/) | [发行上市审核](https://www.sse.com.cn/lawandrules/sselawsrules2025/bond/review/) | [发行承销](https://www.sse.com.cn/lawandrules/sselawsrules2025/bond/issue/) | [公司债券上市（挂牌）](https://www.sse.com.cn/lawandrules/sselawsrules2025/bond/listing/corporatebond/) |\n| -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |\n| [stocks/innovative](https://rsshub.app/sse/sselawsrules/stocks/innovative)             | [stocks/reform](https://rsshub.app/sse/sselawsrules/stocks/reform)                 | [bond/review](https://rsshub.app/sse/sselawsrules/bond/review)                   | [bond/issue](https://rsshub.app/sse/sselawsrules/bond/issue)                | [bond/listing/corporatebond](https://rsshub.app/sse/sselawsrules/bond/listing/corporatebond)            |\n\n| [资产支持证券上市（挂牌）](https://www.sse.com.cn/lawandrules/sselawsrules2025/bond/listing/assets/) | [债券交易通用](https://www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/currency/) | [国债预发行](https://www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/tbondp/) | [债券质押式三方回购](https://www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/tripartyrepo/) | [债券质押式协议回购](https://www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/repurchase/) |\n| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |\n| [bond/listing/assets](https://rsshub.app/sse/sselawsrules/bond/listing/assets)                       | [bond/trading/currency](https://rsshub.app/sse/sselawsrules/bond/trading/currency)         | [bond/trading/tbondp](https://rsshub.app/sse/sselawsrules/bond/trading/tbondp)         | [bond/trading/tripartyrepo](https://rsshub.app/sse/sselawsrules/bond/trading/tripartyrepo)           | [bond/trading/repurchase](https://rsshub.app/sse/sselawsrules/bond/trading/repurchase)             |\n\n| [国债买断式回购交易](https://www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/outrightrepo/) | [信用保护工具](https://www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/cdx/) | [上市公司可转债](https://www.sse.com.cn/lawandrules/sselawsrules2025/bond/convertible/) | [基金上市](https://www.sse.com.cn/lawandrules/sselawsrules2025/fund/listing/) | [基金交易](https://www.sse.com.cn/lawandrules/sselawsrules2025/fund/trading/) |\n| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |\n| [bond/trading/outrightrepo](https://rsshub.app/sse/sselawsrules/bond/trading/outrightrepo)           | [bond/trading/cdx](https://rsshub.app/sse/sselawsrules/bond/trading/cdx)              | [bond/convertible](https://rsshub.app/sse/sselawsrules/bond/convertible)                | [fund/listing](https://rsshub.app/sse/sselawsrules/fund/listing)              | [fund/trading](https://rsshub.app/sse/sselawsrules/fund/trading)              |\n\n| [基础设施公募 REITs](https://www.sse.com.cn/lawandrules/sselawsrules2025/reits/) | [期权](https://www.sse.com.cn/lawandrules/sselawsrules2025/option/) | [通用类](https://www.sse.com.cn/lawandrules/sselawsrules2025/trade/universal/) | [融资融券](https://www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/margin/) | [转融通](https://www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/refinancing/)    |\n| -------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |\n| [reits](https://rsshub.app/sse/sselawsrules/reits)                               | [option](https://rsshub.app/sse/sselawsrules/option)                | [trade/universal](https://rsshub.app/sse/sselawsrules/trade/universal)         | [trade/specific/margin](https://rsshub.app/sse/sselawsrules/trade/specific/margin)     | [trade/specific/refinancing](https://rsshub.app/sse/sselawsrules/trade/specific/refinancing) |\n\n| [质押式回购](https://www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/repo/) | [质押式报价回购](https://www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/pricerepo/) | [约定购回](https://www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/promise/) | [协议转让](https://www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/xyzr/) | [其他](https://www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/others/) |\n| -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |\n| [trade/specific/repo](https://rsshub.app/sse/sselawsrules/trade/specific/repo)         | [trade/specific/pricerepo](https://rsshub.app/sse/sselawsrules/trade/specific/pricerepo)        | [trade/specific/promise](https://rsshub.app/sse/sselawsrules/trade/specific/promise)    | [trade/specific/xyzr](https://rsshub.app/sse/sselawsrules/trade/specific/xyzr)       | [trade/specific/others](https://rsshub.app/sse/sselawsrules/trade/specific/others) |\n\n| [沪港通](https://www.sse.com.cn/lawandrules/sselawsrules2025/global/hkexsc/) | [互联互通存托凭证](https://www.sse.com.cn/lawandrules/sselawsrules2025/global/slsc/) | [会员管理](https://www.sse.com.cn/lawandrules/sselawsrules2025/member/personnel/) | [适当性管理](https://www.sse.com.cn/lawandrules/sselawsrules2025/member/adequacy/) | [纪律处分与复核](https://www.sse.com.cn/lawandrules/sselawsrules2025/disciplinary/) |\n| ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |\n| [global/hkexsc](https://rsshub.app/sse/sselawsrules/global/hkexsc)           | [global/slsc](https://rsshub.app/sse/sselawsrules/global/slsc)                       | [member/personnel](https://rsshub.app/sse/sselawsrules/member/personnel)          | [member/adequacy](https://rsshub.app/sse/sselawsrules/member/adequacy)             | [disciplinary](https://rsshub.app/sse/sselawsrules/disciplinary)                    |\n\n| [交易收费](https://www.sse.com.cn/lawandrules/sselawsrules2025/charge/) | [其他业务规则](https://www.sse.com.cn/lawandrules/sselawsrules2025/other/) | [业务规则废止公告](https://www.sse.com.cn/lawandrules/sselawsrules2025/repeal/announcement/) | [已废止规则文本](https://www.sse.com.cn/lawandrules/sselawsrules2025/repeal/rules/) |\n| ----------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |\n| [charge](https://rsshub.app/sse/sselawsrules/charge)                    | [other](https://rsshub.app/sse/sselawsrules/other)                         | [repeal/announcement](https://rsshub.app/sse/sselawsrules/repeal/announcement)               | [repeal/rules](https://rsshub.app/sse/sselawsrules/repeal/rules)                    |",
         "categories": [
           "finance"
         ],
@@ -113109,308 +112903,308 @@
           {
             "title": "最新规则",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/latest/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/latest/"
             ],
             "target": "/sselawsrules/latest"
           },
           {
             "title": "章程",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/article/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/article/"
             ],
             "target": "/sselawsrules/article"
           },
           {
             "title": "首发",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/stocks/review/firstepisode/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/stocks/review/firstepisode/"
             ],
             "target": "/sselawsrules/stocks/review/firstepisode"
           },
           {
             "title": "再融资",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/stocks/review/refinancing/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/stocks/review/refinancing/"
             ],
             "target": "/sselawsrules/stocks/review/refinancing"
           },
           {
             "title": "重组",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/stocks/review/recombination/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/stocks/review/recombination/"
             ],
             "target": "/sselawsrules/stocks/review/recombination"
           },
           {
             "title": "转板",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/stocks/review/flap/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/stocks/review/flap/"
             ],
             "target": "/sselawsrules/stocks/review/flap"
           },
           {
             "title": "发行承销",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/stocks/issue/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/stocks/issue/"
             ],
             "target": "/sselawsrules/stocks/issue"
           },
           {
             "title": "主板上市（挂牌）",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/stocks/mainipo/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/stocks/mainipo/"
             ],
             "target": "/sselawsrules/stocks/mainipo"
           },
           {
             "title": "科创板上市（挂牌）",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/stocks/staripo/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/stocks/staripo/"
             ],
             "target": "/sselawsrules/stocks/staripo"
           },
           {
             "title": "股票交易",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/stocks/exchange/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/stocks/exchange/"
             ],
             "target": "/sselawsrules/stocks/exchange"
           },
           {
             "title": "试点创新企业",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/stocks/innovative/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/stocks/innovative/"
             ],
             "target": "/sselawsrules/stocks/innovative"
           },
           {
             "title": "股权分置改革",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/stocks/reform/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/stocks/reform/"
             ],
             "target": "/sselawsrules/stocks/reform"
           },
           {
             "title": "发行上市审核",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/bond/review/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/bond/review/"
             ],
             "target": "/sselawsrules/bond/review"
           },
           {
             "title": "发行承销",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/bond/issue/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/bond/issue/"
             ],
             "target": "/sselawsrules/bond/issue"
           },
           {
             "title": "公司债券上市（挂牌）",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/bond/listing/corporatebond/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/bond/listing/corporatebond/"
             ],
             "target": "/sselawsrules/bond/listing/corporatebond"
           },
           {
             "title": "资产支持证券上市（挂牌）",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/bond/listing/assets/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/bond/listing/assets/"
             ],
             "target": "/sselawsrules/bond/listing/assets"
           },
           {
             "title": "债券交易通用",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/bond/trading/currency/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/currency/"
             ],
             "target": "/sselawsrules/bond/trading/currency"
           },
           {
             "title": "国债预发行",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/bond/trading/tbondp/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/tbondp/"
             ],
             "target": "/sselawsrules/bond/trading/tbondp"
           },
           {
             "title": "债券质押式三方回购",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/bond/trading/tripartyrepo/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/tripartyrepo/"
             ],
             "target": "/sselawsrules/bond/trading/tripartyrepo"
           },
           {
             "title": "债券质押式协议回购",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/bond/trading/repurchase/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/repurchase/"
             ],
             "target": "/sselawsrules/bond/trading/repurchase"
           },
           {
             "title": "国债买断式回购交易",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/bond/trading/outrightrepo/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/outrightrepo/"
             ],
             "target": "/sselawsrules/bond/trading/outrightrepo"
           },
           {
             "title": "信用保护工具",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/bond/trading/cdx/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/bond/trading/cdx/"
             ],
             "target": "/sselawsrules/bond/trading/cdx"
           },
           {
             "title": "上市公司可转债",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/bond/convertible/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/bond/convertible/"
             ],
             "target": "/sselawsrules/bond/convertible"
           },
           {
             "title": "基金上市",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/fund/listing/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/fund/listing/"
             ],
             "target": "/sselawsrules/fund/listing"
           },
           {
             "title": "基金交易",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/fund/trading/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/fund/trading/"
             ],
             "target": "/sselawsrules/fund/trading"
           },
           {
             "title": "基础设施公募REITs",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/reits/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/reits/"
             ],
             "target": "/sselawsrules/reits"
           },
           {
             "title": "期权",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/option/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/option/"
             ],
             "target": "/sselawsrules/option"
           },
           {
             "title": "通用类",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/trade/universal/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/trade/universal/"
             ],
             "target": "/sselawsrules/trade/universal"
           },
           {
             "title": "融资融券",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/trade/specific/margin/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/margin/"
             ],
             "target": "/sselawsrules/trade/specific/margin"
           },
           {
             "title": "转融通",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/trade/specific/refinancing/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/refinancing/"
             ],
             "target": "/sselawsrules/trade/specific/refinancing"
           },
           {
             "title": "质押式回购",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/trade/specific/repo/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/repo/"
             ],
             "target": "/sselawsrules/trade/specific/repo"
           },
           {
             "title": "质押式报价回购",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/trade/specific/pricerepo/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/pricerepo/"
             ],
             "target": "/sselawsrules/trade/specific/pricerepo"
           },
           {
             "title": "约定购回",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/trade/specific/promise/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/promise/"
             ],
             "target": "/sselawsrules/trade/specific/promise"
           },
           {
             "title": "协议转让",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/trade/specific/xyzr/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/xyzr/"
             ],
             "target": "/sselawsrules/trade/specific/xyzr"
           },
           {
             "title": "其他",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/trade/specific/others/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/trade/specific/others/"
             ],
             "target": "/sselawsrules/trade/specific/others"
           },
           {
             "title": "沪港通",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/global/hkexsc/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/global/hkexsc/"
             ],
             "target": "/sselawsrules/global/hkexsc"
           },
           {
             "title": "互联互通存托凭证",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/global/slsc/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/global/slsc/"
             ],
             "target": "/sselawsrules/global/slsc"
           },
           {
             "title": "会员管理",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/member/personnel/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/member/personnel/"
             ],
             "target": "/sselawsrules/member/personnel"
           },
           {
             "title": "适当性管理",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/member/adequacy/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/member/adequacy/"
             ],
             "target": "/sselawsrules/member/adequacy"
           },
           {
             "title": "纪律处分与复核",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/disciplinary/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/disciplinary/"
             ],
             "target": "/sselawsrules/disciplinary"
           },
           {
             "title": "交易收费",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/charge/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/charge/"
             ],
             "target": "/sselawsrules/charge"
           },
           {
             "title": "其他业务规则",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/other/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/other/"
             ],
             "target": "/sselawsrules/other"
           },
           {
             "title": "业务规则废止公告",
             "source": [
-              "www.sse.com.cn/lawandrules/sserules/repeal/announcement/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/repeal/announcement/"
             ],
-            "target": "/sselawsrules//lawandrules/sserules/repeal/announcement"
+            "target": "/sselawsrules/repeal/announcement"
           },
           {
             "title": "已废止规则文本",
             "source": [
-              "www.sse.com.cn/lawandrules/sselawsrules/repeal/rules/"
+              "www.sse.com.cn/lawandrules/sselawsrules2025/repeal/rules/"
             ],
             "target": "/sselawsrules/repeal/rules"
           }
@@ -121102,35 +120896,6 @@
     "url": "www.toutiao.com",
     "lang": "zh-CN"
   },
-  "towardsdatascience": {
-    "routes": {
-      "/latest": {
-        "path": "/latest",
-        "categories": [
-          "blog"
-        ],
-        "example": "/towardsdatascience/latest",
-        "radar": [
-          {
-            "source": [
-              "towardsdatascience.com/"
-            ]
-          }
-        ],
-        "name": "Latest articles",
-        "maintainers": [
-          "mintyfrankie"
-        ],
-        "url": "towardsdatascience.com/latest",
-        "location": "latest.ts",
-        "module": "() => import('@/routes/towardsdatascience/latest.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "Towards Data Science",
-    "url": "towardsdatascience.com",
-    "lang": "en"
-  },
   "tpre": {
     "routes": {
       "/cqzr": {
@@ -125649,451 +125414,6 @@
     "name": "Western Digital",
     "url": "support.wdc.com",
     "lang": "en"
-  },
-  "wdfxw": {
-    "routes": {
-      "/bookfree/:id?": {
-        "path": "/bookfree/:id?",
-        "name": "免费区",
-        "url": "www.wdfxw.net",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "example": "/wdfxw/bookfree",
-        "parameters": {
-          "id": {
-            "description": "分类，默认为空，即全部，可在对应分类页 URL 中找到",
-            "options": [
-              {
-                "label": "全部",
-                "value": ""
-              },
-              {
-                "label": "行业标准",
-                "value": "00002"
-              },
-              {
-                "label": "国家标准GB",
-                "value": "00001"
-              },
-              {
-                "label": "国外标准",
-                "value": "00003"
-              },
-              {
-                "label": "监理资料",
-                "value": "00004"
-              },
-              {
-                "label": "施工组织设计",
-                "value": "00005"
-              },
-              {
-                "label": "土木工程毕业设计论文",
-                "value": "00006"
-              },
-              {
-                "label": "机械类毕业设计论文",
-                "value": "00007"
-              },
-              {
-                "label": "小学课件教学资料",
-                "value": "00008"
-              },
-              {
-                "label": "初中课件教学资料",
-                "value": "00009"
-              },
-              {
-                "label": "高中课件教学资料",
-                "value": "00010"
-              },
-              {
-                "label": "工作计划个人总结",
-                "value": "00011"
-              },
-              {
-                "label": "中学小学教案导学案与教学设计",
-                "value": "00012"
-              },
-              {
-                "label": "作文大全",
-                "value": "00013"
-              },
-              {
-                "label": "幼儿教育",
-                "value": "00014"
-              },
-              {
-                "label": "论文",
-                "value": "00015"
-              },
-              {
-                "label": "财务管理",
-                "value": "00016"
-              },
-              {
-                "label": "管理信息化",
-                "value": "00017"
-              },
-              {
-                "label": "行业分类",
-                "value": "00018"
-              },
-              {
-                "label": "合同样本",
-                "value": "00019"
-              },
-              {
-                "label": "品质管理",
-                "value": "00020"
-              },
-              {
-                "label": "企业管理",
-                "value": "00021"
-              },
-              {
-                "label": "人力资源",
-                "value": "00022"
-              },
-              {
-                "label": "生产管理",
-                "value": "00023"
-              },
-              {
-                "label": "市场营销",
-                "value": "00024"
-              },
-              {
-                "label": "制度表格",
-                "value": "00025"
-              },
-              {
-                "label": "行业资料",
-                "value": "00026"
-              },
-              {
-                "label": "国家标准",
-                "value": "00027"
-              },
-              {
-                "label": "软件教程",
-                "value": "00028"
-              },
-              {
-                "label": "标准汇编",
-                "value": "00029"
-              },
-              {
-                "label": "其他",
-                "value": "00030"
-              },
-              {
-                "label": "职业资格考试",
-                "value": "00031"
-              },
-              {
-                "label": "股票证券行业研究报告(研报）",
-                "value": "00032"
-              },
-              {
-                "label": "基金申请",
-                "value": "00033"
-              },
-              {
-                "label": "教师资格证考试资料",
-                "value": "00034"
-              },
-              {
-                "label": "专利说明书",
-                "value": "00035"
-              }
-            ]
-          }
-        },
-        "description": "::: tip\n订阅 [行业标准](https://www.wdfxw.net/bookfree-00002.html)，其源网址为 `https://www.wdfxw.net/bookfree-00002.html`，请参考该 URL 指定部分构成参数，此时路由为 [`/wdfxw/bookfree/00002`](https://rsshub.app/wdfxw/bookfree/00002)。\n:::\n\n<details>\n  <summary>更多分类</summary>\n\n| 分类                                                                      | ID                                               |\n| ------------------------------------------------------------------------- | ------------------------------------------------ |\n| [全部](https://www.wdfxw.net/bookfree.html)                               | [<无>](https://rsshub.app/wdfxw/bookfree)        |\n| [行业标准](https://www.wdfxw.net/bookfree-00002.html)                     | [00002](https://rsshub.app/wdfxw/bookfree/00002) |\n| [国家标准 GB](https://www.wdfxw.net/bookfree-00001.html)                  | [00001](https://rsshub.app/wdfxw/bookfree/00001) |\n| [国外标准](https://www.wdfxw.net/bookfree-00003.html)                     | [00003](https://rsshub.app/wdfxw/bookfree/00003) |\n| [监理资料](https://www.wdfxw.net/bookfree-00004.html)                     | [00004](https://rsshub.app/wdfxw/bookfree/00004) |\n| [施工组织设计](https://www.wdfxw.net/bookfree-00005.html)                 | [00005](https://rsshub.app/wdfxw/bookfree/00005) |\n| [土木工程毕业设计论文](https://www.wdfxw.net/bookfree-00006.html)         | [00006](https://rsshub.app/wdfxw/bookfree/00006) |\n| [机械类毕业设计论文](https://www.wdfxw.net/bookfree-00007.html)           | [00007](https://rsshub.app/wdfxw/bookfree/00007) |\n| [小学课件教学资料](https://www.wdfxw.net/bookfree-00008.html)             | [00008](https://rsshub.app/wdfxw/bookfree/00008) |\n| [初中课件教学资料](https://www.wdfxw.net/bookfree-00009.html)             | [00009](https://rsshub.app/wdfxw/bookfree/00009) |\n| [高中课件教学资料](https://www.wdfxw.net/bookfree-00010.html)             | [00010](https://rsshub.app/wdfxw/bookfree/00010) |\n| [工作计划个人总结](https://www.wdfxw.net/bookfree-00011.html)             | [00011](https://rsshub.app/wdfxw/bookfree/00011) |\n| [中学小学教案导学案与教学设计](https://www.wdfxw.net/bookfree-00012.html) | [00012](https://rsshub.app/wdfxw/bookfree/00012) |\n| [作文大全](https://www.wdfxw.net/bookfree-00013.html)                     | [00013](https://rsshub.app/wdfxw/bookfree/00013) |\n| [幼儿教育](https://www.wdfxw.net/bookfree-00014.html)                     | [00014](https://rsshub.app/wdfxw/bookfree/00014) |\n| [论文](https://www.wdfxw.net/bookfree-00015.html)                         | [00015](https://rsshub.app/wdfxw/bookfree/00015) |\n| [财务管理](https://www.wdfxw.net/bookfree-00016.html)                     | [00016](https://rsshub.app/wdfxw/bookfree/00016) |\n| [管理信息化](https://www.wdfxw.net/bookfree-00017.html)                   | [00017](https://rsshub.app/wdfxw/bookfree/00017) |\n| [行业分类](https://www.wdfxw.net/bookfree-00018.html)                     | [00018](https://rsshub.app/wdfxw/bookfree/00018) |\n| [合同样本](https://www.wdfxw.net/bookfree-00019.html)                     | [00019](https://rsshub.app/wdfxw/bookfree/00019) |\n| [品质管理](https://www.wdfxw.net/bookfree-00020.html)                     | [00020](https://rsshub.app/wdfxw/bookfree/00020) |\n| [企业管理](https://www.wdfxw.net/bookfree-00021.html)                     | [00021](https://rsshub.app/wdfxw/bookfree/00021) |\n| [人力资源](https://www.wdfxw.net/bookfree-00022.html)                     | [00022](https://rsshub.app/wdfxw/bookfree/00022) |\n| [生产管理](https://www.wdfxw.net/bookfree-00023.html)                     | [00023](https://rsshub.app/wdfxw/bookfree/00023) |\n| [市场营销](https://www.wdfxw.net/bookfree-00024.html)                     | [00024](https://rsshub.app/wdfxw/bookfree/00024) |\n| [制度表格](https://www.wdfxw.net/bookfree-00025.html)                     | [00025](https://rsshub.app/wdfxw/bookfree/00025) |\n| [行业资料](https://www.wdfxw.net/bookfree-00026.html)                     | [00026](https://rsshub.app/wdfxw/bookfree/00026) |\n| [国家标准](https://www.wdfxw.net/bookfree-00027.html)                     | [00027](https://rsshub.app/wdfxw/bookfree/00027) |\n| [软件教程](https://www.wdfxw.net/bookfree-00028.html)                     | [00028](https://rsshub.app/wdfxw/bookfree/00028) |\n| [标准汇编](https://www.wdfxw.net/bookfree-00029.html)                     | [00029](https://rsshub.app/wdfxw/bookfree/00029) |\n| [其他](https://www.wdfxw.net/bookfree-00030.html)                         | [00030](https://rsshub.app/wdfxw/bookfree/00030) |\n| [职业资格考试](https://www.wdfxw.net/bookfree-00031.html)                 | [00031](https://rsshub.app/wdfxw/bookfree/00031) |\n| [股票证券行业研究报告 (研报）](https://www.wdfxw.net/bookfree-00032.html) | [00032](https://rsshub.app/wdfxw/bookfree/00032) |\n| [基金申请](https://www.wdfxw.net/bookfree-00033.html)                     | [00033](https://rsshub.app/wdfxw/bookfree/00033) |\n| [教师资格证考试资料](https://www.wdfxw.net/bookfree-00034.html)           | [00034](https://rsshub.app/wdfxw/bookfree/00034) |\n| [专利说明书](https://www.wdfxw.net/bookfree-00035.html)                   | [00035](https://rsshub.app/wdfxw/bookfree/00035) |\n\n</details>",
-        "categories": [
-          "reading"
-        ],
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportRadar": true,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "www.wdfxw.net"
-            ],
-            "target": "/bookfree"
-          },
-          {
-            "title": "全部",
-            "source": [
-              "www.wdfxw.net/bookfree.html"
-            ],
-            "target": "/bookfree"
-          },
-          {
-            "title": "行业标准",
-            "source": [
-              "www.wdfxw.net/bookfree-00002.html"
-            ],
-            "target": "/bookfree/00002"
-          },
-          {
-            "title": "国家标准GB",
-            "source": [
-              "www.wdfxw.net/bookfree-00001.html"
-            ],
-            "target": "/bookfree/00001"
-          },
-          {
-            "title": "国外标准",
-            "source": [
-              "www.wdfxw.net/bookfree-00003.html"
-            ],
-            "target": "/bookfree/00003"
-          },
-          {
-            "title": "监理资料",
-            "source": [
-              "www.wdfxw.net/bookfree-00004.html"
-            ],
-            "target": "/bookfree/00004"
-          },
-          {
-            "title": "施工组织设计",
-            "source": [
-              "www.wdfxw.net/bookfree-00005.html"
-            ],
-            "target": "/bookfree/00005"
-          },
-          {
-            "title": "土木工程毕业设计论文",
-            "source": [
-              "www.wdfxw.net/bookfree-00006.html"
-            ],
-            "target": "/bookfree/00006"
-          },
-          {
-            "title": "机械类毕业设计论文",
-            "source": [
-              "www.wdfxw.net/bookfree-00007.html"
-            ],
-            "target": "/bookfree/00007"
-          },
-          {
-            "title": "小学课件教学资料",
-            "source": [
-              "www.wdfxw.net/bookfree-00008.html"
-            ],
-            "target": "/bookfree/00008"
-          },
-          {
-            "title": "初中课件教学资料",
-            "source": [
-              "www.wdfxw.net/bookfree-00009.html"
-            ],
-            "target": "/bookfree/00009"
-          },
-          {
-            "title": "高中课件教学资料",
-            "source": [
-              "www.wdfxw.net/bookfree-00010.html"
-            ],
-            "target": "/bookfree/00010"
-          },
-          {
-            "title": "工作计划个人总结",
-            "source": [
-              "www.wdfxw.net/bookfree-00011.html"
-            ],
-            "target": "/bookfree/00011"
-          },
-          {
-            "title": "中学小学教案导学案与教学设计",
-            "source": [
-              "www.wdfxw.net/bookfree-00012.html"
-            ],
-            "target": "/bookfree/00012"
-          },
-          {
-            "title": "作文大全",
-            "source": [
-              "www.wdfxw.net/bookfree-00013.html"
-            ],
-            "target": "/bookfree/00013"
-          },
-          {
-            "title": "幼儿教育",
-            "source": [
-              "www.wdfxw.net/bookfree-00014.html"
-            ],
-            "target": "/bookfree/00014"
-          },
-          {
-            "title": "论文",
-            "source": [
-              "www.wdfxw.net/bookfree-00015.html"
-            ],
-            "target": "/bookfree/00015"
-          },
-          {
-            "title": "财务管理",
-            "source": [
-              "www.wdfxw.net/bookfree-00016.html"
-            ],
-            "target": "/bookfree/00016"
-          },
-          {
-            "title": "管理信息化",
-            "source": [
-              "www.wdfxw.net/bookfree-00017.html"
-            ],
-            "target": "/bookfree/00017"
-          },
-          {
-            "title": "行业分类",
-            "source": [
-              "www.wdfxw.net/bookfree-00018.html"
-            ],
-            "target": "/bookfree/00018"
-          },
-          {
-            "title": "合同样本",
-            "source": [
-              "www.wdfxw.net/bookfree-00019.html"
-            ],
-            "target": "/bookfree/00019"
-          },
-          {
-            "title": "品质管理",
-            "source": [
-              "www.wdfxw.net/bookfree-00020.html"
-            ],
-            "target": "/bookfree/00020"
-          },
-          {
-            "title": "企业管理",
-            "source": [
-              "www.wdfxw.net/bookfree-00021.html"
-            ],
-            "target": "/bookfree/00021"
-          },
-          {
-            "title": "人力资源",
-            "source": [
-              "www.wdfxw.net/bookfree-00022.html"
-            ],
-            "target": "/bookfree/00022"
-          },
-          {
-            "title": "生产管理",
-            "source": [
-              "www.wdfxw.net/bookfree-00023.html"
-            ],
-            "target": "/bookfree/00023"
-          },
-          {
-            "title": "市场营销",
-            "source": [
-              "www.wdfxw.net/bookfree-00024.html"
-            ],
-            "target": "/bookfree/00024"
-          },
-          {
-            "title": "制度表格",
-            "source": [
-              "www.wdfxw.net/bookfree-00025.html"
-            ],
-            "target": "/bookfree/00025"
-          },
-          {
-            "title": "行业资料",
-            "source": [
-              "www.wdfxw.net/bookfree-00026.html"
-            ],
-            "target": "/bookfree/00026"
-          },
-          {
-            "title": "国家标准",
-            "source": [
-              "www.wdfxw.net/bookfree-00027.html"
-            ],
-            "target": "/bookfree/00027"
-          },
-          {
-            "title": "软件教程",
-            "source": [
-              "www.wdfxw.net/bookfree-00028.html"
-            ],
-            "target": "/bookfree/00028"
-          },
-          {
-            "title": "标准汇编",
-            "source": [
-              "www.wdfxw.net/bookfree-00029.html"
-            ],
-            "target": "/bookfree/00029"
-          },
-          {
-            "title": "其他",
-            "source": [
-              "www.wdfxw.net/bookfree-00030.html"
-            ],
-            "target": "/bookfree/00030"
-          },
-          {
-            "title": "职业资格考试",
-            "source": [
-              "www.wdfxw.net/bookfree-00031.html"
-            ],
-            "target": "/bookfree/00031"
-          },
-          {
-            "title": "股票证券行业研究报告(研报）",
-            "source": [
-              "www.wdfxw.net/bookfree-00032.html"
-            ],
-            "target": "/bookfree/00032"
-          },
-          {
-            "title": "基金申请",
-            "source": [
-              "www.wdfxw.net/bookfree-00033.html"
-            ],
-            "target": "/bookfree/00033"
-          },
-          {
-            "title": "教师资格证考试资料",
-            "source": [
-              "www.wdfxw.net/bookfree-00034.html"
-            ],
-            "target": "/bookfree/00034"
-          },
-          {
-            "title": "专利说明书",
-            "source": [
-              "www.wdfxw.net/bookfree-00035.html"
-            ],
-            "target": "/bookfree/00035"
-          }
-        ],
-        "view": 0,
-        "location": "bookfree.tsx",
-        "module": "() => import('@/routes/wdfxw/bookfree.tsx')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "WDFXW文档分享网",
-    "url": "wdfxw.net",
-    "description": "",
-    "lang": "zh"
   },
   "web3caff": {
     "routes": {
@@ -135242,115 +134562,6 @@
     "url": "8world.com",
     "lang": "zh-CN"
   },
-  "95mm": {
-    "routes": {
-      "/category/:category": {
-        "path": "/category/:category",
-        "categories": [
-          "picture"
-        ],
-        "example": "/95mm/category/1",
-        "parameters": {
-          "category": "集合，见下表"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false,
-          "nsfw": true
-        },
-        "radar": [
-          {
-            "source": [
-              "95mm.org/"
-            ]
-          }
-        ],
-        "name": "集合",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "url": "95mm.org/",
-        "description": "| 清纯唯美 | 摄影私房 | 明星写真 | 三次元 | 异域美景 | 性感妖姬 | 游戏主题 | 美女壁纸 |\n| -------- | -------- | -------- | ------ | -------- | -------- | -------- | -------- |\n| 1        | 2        | 4        | 5      | 6        | 7        | 9        | 11       |",
-        "location": "category.ts",
-        "module": "() => import('@/routes/95mm/category.ts')"
-      },
-      "/tab/:tab?": {
-        "path": "/tab/:tab?",
-        "categories": [
-          "picture"
-        ],
-        "example": "/95mm/tab/热门",
-        "parameters": {
-          "tab": "分类，见下表，默认为最新"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false,
-          "nsfw": true
-        },
-        "radar": [
-          {
-            "source": [
-              "95mm.org/"
-            ]
-          }
-        ],
-        "name": "分类",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "url": "95mm.org/",
-        "description": "| 最新 | 热门 | 校花 | 森系 | 清纯 | 童颜 | 嫩模 | 少女 |\n| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |",
-        "location": "tab.ts",
-        "module": "() => import('@/routes/95mm/tab.ts')"
-      },
-      "/tag/:tag": {
-        "path": "/tag/:tag",
-        "categories": [
-          "picture"
-        ],
-        "example": "/95mm/tag/黑丝",
-        "parameters": {
-          "tag": "标签，可在对应标签页中找到"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false,
-          "nsfw": true
-        },
-        "radar": [
-          {
-            "source": [
-              "95mm.org/"
-            ]
-          }
-        ],
-        "name": "标签",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "url": "95mm.org/",
-        "location": "tag.ts",
-        "module": "() => import('@/routes/95mm/tag.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "MM 范",
-    "url": "95mm.org",
-    "lang": "zh-CN"
-  },
   "9to5": {
     "routes": {
       "/:subsite/:tag?": {
@@ -135599,7 +134810,7 @@
           "language": "Language, see below, arabic by default, as Arabic",
           "category": "Category, can be found in URL, homepage by default"
         },
-        "description": "Language\n\n| Arabic | Chinese | English |\n| ------ | ------- | ------- |\n| arabic | chinese | english |\n\n::: tip\nIf you subscribe to [Al Jazeera English - Economy](https://www.aljazeera.com/economy), whose language is `english` and whose path is `economy`, you can get the route as [`/aljazeera/english/economy`](https://rsshub.app/aljazeera/english/economy)\n\nIf you subscribe to [Al Jazeera Chinese - Political](https://chinese.aljazeera.net/news/political) with language `chinese` and path `news/political`, you can get the route as [`/aljazeera/chinese/news/political`](https://rsshub.app/aljazeera/chinese/news/political)\n:::",
+        "description": "Language\n\n| Arabic | English |\n| ------ | ------- |\n| arabic | english |\n\n::: tip\nIf you subscribe to [Al Jazeera English - Economy](https://www.aljazeera.com/economy), whose language is `english` and whose path is `economy`, you can get the route as [`/aljazeera/english/economy`](https://rsshub.app/aljazeera/english/economy)\n:::",
         "radar": [
           {
             "source": [
@@ -135614,13 +134825,6 @@
               "www.aljazeera.net/"
             ],
             "target": "/arabic/:category"
-          },
-          {
-            "source": [
-              "chinese.aljazeera.net/:category",
-              "chinese.aljazeera.net/"
-            ],
-            "target": "/chinese/:category"
           }
         ],
         "name": "News",
@@ -135639,7 +134843,7 @@
         "parameters": {
           "language": "Language, see below, arabic by default, as Arabic"
         },
-        "description": "Language\n\n| Arabic | Chinese | English |\n| ------ | ------- | ------- |\n| arabic | chinese | english |\n\n::: tip\nThere is no RSS source for Al Jazeera Chinese, returning homepage content by default\n:::",
+        "description": "Language\n\n| Arabic | English |\n| ------ | ------- |\n| arabic | english |",
         "radar": [
           {
             "source": [
@@ -135673,7 +134877,7 @@
           "language": "Language, see below, arabic by default, as Arabic",
           "id": "Tag id, can be found in URL"
         },
-        "description": "Language\n\n| Arabic | Chinese | English |\n| ------ | ------- | ------- |\n| arabic | chinese | english |\n\n::: tip\nIf you subscribe to [Al Jazeera English - Science and Technology](https://www.aljazeera.com/tag/science-and-technology), whose language is `english` and whose path is `science-and-technology`, you can get the route as [`/aljazeera/english/tag/science-and-technology`](https://rsshub.app/aljazeera/english/tag/science-and-technology)\n:::",
+        "description": "Language\n\n| Arabic | English |\n| ------ | ------- |\n| arabic | english |\n\n::: tip\nIf you subscribe to [Al Jazeera English - Science and Technology](https://www.aljazeera.com/tag/science-and-technology), whose language is `english` and whose path is `science-and-technology`, you can get the route as [`/aljazeera/english/tag/science-and-technology`](https://rsshub.app/aljazeera/english/tag/science-and-technology)\n:::",
         "radar": [
           {
             "source": [
@@ -135688,13 +134892,6 @@
               "www.aljazeera.net/"
             ],
             "target": "/arabic/tag/:id"
-          },
-          {
-            "source": [
-              "chinese.aljazeera.net/tag/:id",
-              "chinese.aljazeera.net/"
-            ],
-            "target": "/chinese/tag/:id"
           }
         ],
         "name": "Tag",
@@ -136174,6 +135371,115 @@
     "apiRoutes": {},
     "name": "Arcteryx",
     "url": "arcteryx.com",
+    "lang": "en"
+  },
+  "arm": {
+    "routes": {
+      "/blog/:topic?": {
+        "path": "/blog/:topic?",
+        "name": "Blog",
+        "url": "newsroom.arm.com/blog",
+        "example": "/arm/blog",
+        "categories": [
+          "new-media"
+        ],
+        "view": 0,
+        "maintainers": [
+          "ljh12138164"
+        ],
+        "parameters": {
+          "topic": "Topic slug from `https://newsroom.arm.com/topics/:topic`. Omit or use `all` for all topics."
+        },
+        "description": "Full-text blog posts from Arm Newsroom via the WordPress REST API. Returns up to 20 entries by default and supports the common `limit` parameter (up to 100).\n\n| Topic | Slug |\n| --- | --- |\n| Artificial Intelligence (AI) | `artificial-intelligence` |\n| Automotive and autonomous machines | `automotive-autonomous-machines` |\n| Cloud computing | `cloud-computing` |\n| Company news | `company` |\n| Gaming | `gaming` |\n| High-performance computing | `hpc` |\n| Internet of Things (IoT) | `internet-of-things` |\n| Investor news | `investor` |\n| Network infrastructure | `network-infrastructure` |\n| PCs and laptops | `pc-laptops` |\n| Reports | `reports` |\n| Robotics | `robotics` |\n| Security | `security` |\n| Silicon | `silicon` |\n| Smartphones | `smartphones` |\n| Software | `software` |\n| Sustainability and social impact | `sustainability-and-social-impact` |\n| Wearables | `wearables` |",
+        "zh": {
+          "name": "博客",
+          "parameters": {
+            "topic": "官网专题 slug（对应 `https://newsroom.arm.com/topics/:topic`），留空或填 `all` 表示全部专题。"
+          },
+          "description": "通过官方 WordPress REST API 获取 Arm Newsroom 官方博客（`/blog/`）全文内容。默认返回最多 20 篇，可通过通用参数 `limit` 调整（最大 100）。\n\n| 专题 | Slug |\n| --- | --- |\n| 人工智能（AI） | `artificial-intelligence` |\n| 汽车与自动驾驶 | `automotive-autonomous-machines` |\n| 云计算 | `cloud-computing` |\n| 公司新闻 | `company` |\n| 游戏 | `gaming` |\n| 高性能计算（HPC） | `hpc` |\n| 物联网（IoT） | `internet-of-things` |\n| 投资者新闻 | `investor` |\n| 网络基础设施 | `network-infrastructure` |\n| PC 与笔记本 | `pc-laptops` |\n| 报告 | `reports` |\n| 机器人 | `robotics` |\n| 安全 | `security` |\n| 芯片与硅技术 | `silicon` |\n| 智能手机 | `smartphones` |\n| 软件 | `software` |\n| 可持续发展与社会影响 | `sustainability-and-social-impact` |\n| 可穿戴设备 | `wearables` |"
+        },
+        "radar": [
+          {
+            "source": [
+              "newsroom.arm.com/blog",
+              "newsroom.arm.com/blog/:slug"
+            ],
+            "target": "/blog"
+          },
+          {
+            "source": [
+              "newsroom.arm.com/topics/:topic"
+            ],
+            "target": "/blog/:topic"
+          }
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false,
+          "supportRadar": true
+        },
+        "location": "blog.ts",
+        "module": "() => import('@/routes/arm/blog.ts')"
+      },
+      "/news/:topic?": {
+        "path": "/news/:topic?",
+        "name": "News",
+        "url": "newsroom.arm.com/news",
+        "example": "/arm/news",
+        "categories": [
+          "new-media"
+        ],
+        "view": 0,
+        "maintainers": [
+          "ljh12138164"
+        ],
+        "parameters": {
+          "topic": "Topic slug from `https://newsroom.arm.com/topics/:topic`. Omit or use `all` for all topics."
+        },
+        "description": "Full-text press releases and official news from Arm Newsroom via the WordPress REST API. Returns up to 20 entries by default and supports the common `limit` parameter (up to 100).\n\n| Topic | Slug |\n| --- | --- |\n| Artificial Intelligence (AI) | `artificial-intelligence` |\n| Automotive and autonomous machines | `automotive-autonomous-machines` |\n| Cloud computing | `cloud-computing` |\n| Company news | `company` |\n| Gaming | `gaming` |\n| High-performance computing | `hpc` |\n| Internet of Things (IoT) | `internet-of-things` |\n| Investor news | `investor` |\n| Network infrastructure | `network-infrastructure` |\n| PCs and laptops | `pc-laptops` |\n| Reports | `reports` |\n| Robotics | `robotics` |\n| Security | `security` |\n| Silicon | `silicon` |\n| Smartphones | `smartphones` |\n| Software | `software` |\n| Sustainability and social impact | `sustainability-and-social-impact` |\n| Wearables | `wearables` |",
+        "zh": {
+          "name": "新闻稿",
+          "parameters": {
+            "topic": "官网专题 slug（对应 `https://newsroom.arm.com/topics/:topic`），留空或填 `all` 表示全部专题。"
+          },
+          "description": "通过官方 WordPress REST API 获取 Arm Newsroom 官方新闻稿与公告（`/news/`）全文内容。默认返回最多 20 篇，可通过通用参数 `limit` 调整（最大 100）。\n\n| 专题 | Slug |\n| --- | --- |\n| 人工智能（AI） | `artificial-intelligence` |\n| 汽车与自动驾驶 | `automotive-autonomous-machines` |\n| 云计算 | `cloud-computing` |\n| 公司新闻 | `company` |\n| 游戏 | `gaming` |\n| 高性能计算（HPC） | `hpc` |\n| 物联网（IoT） | `internet-of-things` |\n| 投资者新闻 | `investor` |\n| 网络基础设施 | `network-infrastructure` |\n| PC 与笔记本 | `pc-laptops` |\n| 报告 | `reports` |\n| 机器人 | `robotics` |\n| 安全 | `security` |\n| 芯片与硅技术 | `silicon` |\n| 智能手机 | `smartphones` |\n| 软件 | `software` |\n| 可持续发展与社会影响 | `sustainability-and-social-impact` |\n| 可穿戴设备 | `wearables` |"
+        },
+        "radar": [
+          {
+            "source": [
+              "newsroom.arm.com/news",
+              "newsroom.arm.com/news/:slug",
+              "newsroom.arm.com/"
+            ],
+            "target": "/news"
+          },
+          {
+            "source": [
+              "newsroom.arm.com/topics/:topic"
+            ],
+            "target": "/news/:topic"
+          }
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false,
+          "supportRadar": true
+        },
+        "location": "news.ts",
+        "module": "() => import('@/routes/arm/news.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Arm",
+    "url": "arm.com",
     "lang": "en"
   },
   "asahi": {
@@ -144069,113 +143375,6 @@
     "url": "furaffinity.net",
     "lang": "en"
   },
-  "furstar": {
-    "routes": {
-      "/artists/:lang?": {
-        "path": "/artists/:lang?",
-        "categories": [
-          "shopping"
-        ],
-        "example": "/furstar/artists/cn",
-        "parameters": {
-          "lang": "语言, 留空为jp, 支持cn, en"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "furstar.jp/"
-            ],
-            "target": "/artists"
-          }
-        ],
-        "name": "画师列表",
-        "maintainers": [
-          "NeverBehave"
-        ],
-        "url": "furstar.jp/",
-        "location": "artists.ts",
-        "module": "() => import('@/routes/furstar/artists.ts')"
-      },
-      "/archive/:lang?": {
-        "path": "/archive/:lang?",
-        "categories": [
-          "shopping"
-        ],
-        "example": "/furstar/archive/cn",
-        "parameters": {
-          "lang": "语言, 留空为jp, 支持cn, en"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "furstar.jp/:lang/archive.php",
-              "furstar.jp/archive.php"
-            ],
-            "target": "/archive/:lang"
-          }
-        ],
-        "name": "已经出售的角色列表",
-        "maintainers": [
-          "NeverBehave"
-        ],
-        "location": "archive.ts",
-        "module": "() => import('@/routes/furstar/archive.ts')"
-      },
-      "/characters/:lang?": {
-        "path": "/characters/:lang?",
-        "categories": [
-          "shopping"
-        ],
-        "example": "/furstar/characters/cn",
-        "parameters": {
-          "lang": "语言, 留空为jp, 支持cn, en"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "furstar.jp/:lang",
-              "furstar.jp/"
-            ],
-            "target": "/characters/:lang"
-          }
-        ],
-        "name": "最新售卖角色列表",
-        "maintainers": [
-          "NeverBehave"
-        ],
-        "location": "index.ts",
-        "module": "() => import('@/routes/furstar/index.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "Furstar",
-    "url": "furstar.jp",
-    "lang": "ja"
-  },
   "gamer": {
     "routes": {
       "/ani/anime/:sn": {
@@ -144863,92 +144062,6 @@
     "apiRoutes": {},
     "name": "格隆汇",
     "url": "gelonghui.com",
-    "lang": "zh-CN"
-  },
-  "getitfree": {
-    "routes": {
-      "/category/:id{.+}?": {
-        "path": "/category/:id{.+}?",
-        "categories": [
-          "shopping"
-        ],
-        "example": "/getitfree/category/pc",
-        "parameters": {
-          "id": "分类，见下表，可在对应分类页中找到，默认为所有类别"
-        },
-        "radar": [
-          {
-            "source": [
-              "getitfree.cn/category/:id"
-            ],
-            "target": "/category/:id"
-          }
-        ],
-        "name": "分类",
-        "maintainers": [
-          "sanmmm",
-          "nczitzk"
-        ],
-        "url": "getitfree.cn",
-        "description": "::: tip\n可以叠加使用得到分类结果并集，如 [`/getitfree/category/pc,android`](https://rsshub.app/getitfree/category/pc,android)\n\n亦可与标签组合使用，如 [`/getitfree/category/pc/tag/ai`](https://rsshub.app/getitfree/category/pc/tag/ai)\n:::\n\n| 所有类别 | Android | iOS | Mac | PC | UWP | 公告         | 永久免费 | 限时免费 | 正版折扣 |\n| -------- | ------- | --- | --- | -- | --- | ------------ | -------- | -------- | -------- |\n|          | android | ios | mac | pc | uwp | notification | free     | giveaway | discount |",
-        "location": "index.ts",
-        "module": "() => import('@/routes/getitfree/index.ts')"
-      },
-      "/search/:keyword": {
-        "path": "/search/:keyword",
-        "categories": [
-          "shopping"
-        ],
-        "example": "/getitfree/search/windows",
-        "parameters": {
-          "keyword": "关键字"
-        },
-        "radar": [
-          {
-            "source": [
-              "getitfree.cn/"
-            ]
-          }
-        ],
-        "name": "搜索",
-        "maintainers": [
-          "sanmmm",
-          "nczitzk"
-        ],
-        "url": "getitfree.cn",
-        "location": "search.ts",
-        "module": "() => import('@/routes/getitfree/search.ts')"
-      },
-      "/tag/:id{.+}?": {
-        "path": "/tag/:id{.+}?",
-        "categories": [
-          "shopping"
-        ],
-        "example": "/getitfree/tag/ai",
-        "parameters": {
-          "id": "标签，见下表，可在对应标签页中找到，默认为所有标签"
-        },
-        "radar": [
-          {
-            "source": [
-              "getitfree.cn/tag/:id"
-            ],
-            "target": "/tag/:id"
-          }
-        ],
-        "name": "标签",
-        "maintainers": [
-          "nczitzk"
-        ],
-        "url": "getitfree.cn",
-        "description": "::: tip\n可以叠加使用得到标签结果并集，如 [`/getitfree/tag/ai,office`](https://rsshub.app/getitfree/tag/ai,office)\n:::\n\n| AI | Android | DVD | GIF | iCloud |\n| -- | ------- | --- | --- | ------ |\n\n| ICON | iOS | iPhone | Leawo | Mac |\n| ---- | --- | ------ | ----- | --- |\n\n| Markdown | OCR | Office | Office 办公 | PDF |\n| -------- | --- | ------ | ----------- | --- |\n\n| PDF 转换 | Windows | 下载 | 书签管理 | 健康 |\n| -------- | ------- | ---- | -------- | ---- |\n\n| 全平台 | 办公软件 | 加密保护 | 卸载 / 清理 / 优化 | 卸载清理 |\n| ------ | -------- | -------- | ------------------ | -------- |\n\n| 图像处理 | 图片 / 编辑 / 管理 | 壁纸 | 备份 / 恢复 / 加密 | 备份恢复 |\n| -------- | ------------------ | ---- | ------------------ | -------- |\n\n| 字体 | 学习 | 密码管理 | 导航 | 开始菜单 |\n| ---- | ---- | -------- | ---- | -------- |\n\n| 录屏截图 | 影音 / 刻录 / 转换 | 投屏镜像 | 提醒 | 摄影 |\n| -------- | ------------------ | -------- | ---- | ---- |\n\n| 播放器 | 收藏夹 | 效率工具 | 数据传输 | 数据恢复 |\n| ------ | ------ | -------- | -------- | -------- |\n\n| 数据擦除 | 文件管理 | 文档 / 转换 / 压缩 | 文档扫描 | 日历 |\n| -------- | -------- | ------------------ | -------- | ---- |\n\n| 杀毒防护 | 查重 | 正版特惠 | 水印 | 清理优化 |\n| -------- | ---- | -------- | ---- | -------- |\n\n| 滤镜 | 硬件外设 | 硬盘 / 分区 / 驱动 | 硬盘检测 | 稍后阅读 |\n| ---- | -------- | ------------------ | -------- | -------- |\n\n| 笔记 | 系统工具 | 素材 | 网络 / 安全 / 传输 | 网络安全 |\n| ---- | -------- | ---- | ------------------ | -------- |\n\n| 色彩 | 视频剪辑 | 视频转换 | 记账 | 设计 |\n| ---- | -------- | -------- | ---- | ---- |\n\n| 软件卸载 | 远程控制 | 音乐 | 音频 | 驱动 |\n| -------- | -------- | ---- | ---- | ---- |",
-        "location": "tag.ts",
-        "module": "() => import('@/routes/getitfree/tag.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "正版中国",
-    "url": "getitfree.cn",
     "lang": "zh-CN"
   },
   "gov/ah": {
@@ -146258,7 +145371,7 @@
           "EsuRt",
           "howfool"
         ],
-        "description": "| 政务部门 | 滚动新闻 | 新闻要闻 | 国务院新闻 | 国务院工作会议 | 政策文件 |\n| :------: | :------: | :------: | :--------: | :------------: | :------: |\n|    bm    |    gd    |    yw    |     gwy    |     gwyzzjg    |  zhengce |",
+        "description": "| 政务联播 | 滚动新闻 | 新闻要闻 | 国务院新闻 | 国务院工作会议 | 政策文件 |\n| :------: | :------: | :------: | :--------: | :------------: | :------: |\n|    bm    |    gd    |    yw    |     gwy    |     gwyzzjg    |  zhengce |",
         "location": "news/index.ts",
         "module": "() => import('@/routes/gov/cn/news/index.ts')"
       },
@@ -165150,142 +164263,6 @@
     ],
     "lang": "ja"
   },
-  "twreporter": {
-    "routes": {
-      "/category/:category": {
-        "path": "/category/:category",
-        "categories": [
-          "new-media"
-        ],
-        "example": "/twreporter/category/world",
-        "parameters": {
-          "category": "Category"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "twreporter.org/:category"
-            ]
-          },
-          {
-            "source": [
-              "twreporter.org/categories/world"
-            ],
-            "target": "/category/world"
-          },
-          {
-            "source": [
-              "twreporter.org/categories/humanrights"
-            ],
-            "target": "/category/humanrights"
-          },
-          {
-            "source": [
-              "twreporter.org/categories/politics-and-society"
-            ],
-            "target": "/category/politics_and_society"
-          },
-          {
-            "source": [
-              "twreporter.org/categories/health"
-            ],
-            "target": "/category/health"
-          },
-          {
-            "source": [
-              "twreporter.org/categories/environment"
-            ],
-            "target": "/category/environment"
-          },
-          {
-            "source": [
-              "twreporter.org/categories/econ"
-            ],
-            "target": "/category/econ"
-          },
-          {
-            "source": [
-              "twreporter.org/categories/culture"
-            ],
-            "target": "/category/culture"
-          },
-          {
-            "source": [
-              "twreporter.org/categories/education"
-            ],
-            "target": "/category/education"
-          },
-          {
-            "source": [
-              "twreporter.org/categories/podcast"
-            ],
-            "target": "/category/podcast"
-          },
-          {
-            "source": [
-              "twreporter.org/categories/opinion"
-            ],
-            "target": "/category/opinion"
-          },
-          {
-            "source": [
-              "twreporter.org/categories/photography"
-            ],
-            "target": "/category/photos_section"
-          }
-        ],
-        "name": "分類",
-        "maintainers": [
-          "emdoe"
-        ],
-        "url": "twreporter.org/",
-        "location": "category.ts",
-        "module": "() => import('@/routes/twreporter/category.ts')"
-      },
-      "/newest": {
-        "path": "/newest",
-        "categories": [
-          "new-media"
-        ],
-        "example": "/twreporter/newest",
-        "parameters": {},
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "radar": [
-          {
-            "source": [
-              "twreporter.org/"
-            ]
-          }
-        ],
-        "name": "最新",
-        "maintainers": [
-          "emdoe"
-        ],
-        "url": "twreporter.org/",
-        "location": "newest.ts",
-        "module": "() => import('@/routes/twreporter/newest.ts')"
-      }
-    },
-    "apiRoutes": {},
-    "name": "報導者",
-    "url": "twreporter.org",
-    "lang": "zh-TW"
-  },
   "vocus": {
     "routes": {
       "/publication/:id": {
@@ -169976,6 +168953,50 @@
     "url": "bbs.hupu.com",
     "lang": "zh-CN"
   },
+  "mymusicsheet": {
+    "routes": {
+      "/user/sheets/:username/:iso?/:freeOnly?": {
+        "path": "/user/sheets/:username/:iso?/:freeOnly?",
+        "categories": [
+          "shopping"
+        ],
+        "example": "/mymusicsheet/user/sheets/HalcyonMusic/USD/1",
+        "parameters": {
+          "username": "Username, can be found in the URL",
+          "iso": "ISO 4217 currency code for displaying prices, defaults to `USD`",
+          "freeOnly": "Only return free scores, any value to enable"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "mymusicfive.com/:username/*",
+              "mymusicfive.com/:username"
+            ],
+            "target": "/user/sheets/:username"
+          }
+        ],
+        "name": "User Sheets",
+        "maintainers": [
+          "Freddd13"
+        ],
+        "description": "Please refer to [Wikipedia](https://en.wikipedia.org/wiki/ISO_4217#Active_codes) for ISO 4217.",
+        "location": "usersheets.tsx",
+        "module": "() => import('@/routes/mymusicsheet/usersheets.tsx')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "mymusic5 (MyMusicSheet)",
+    "url": "mymusicfive.com",
+    "lang": "en"
+  },
   "pixiv": {
     "routes": {
       "/user/bookmarks/:id": {
@@ -170377,6 +169398,96 @@
     "name": "pixiv",
     "url": "www.pixiv.net",
     "lang": "ja"
+  },
+  "psyche": {
+    "routes": {
+      "/topic/:topic": {
+        "path": "/topic/:topic",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/psyche/topic/therapeia",
+        "parameters": {
+          "topic": "Topic"
+        },
+        "radar": [
+          {
+            "source": [
+              "psyche.co/therapeia"
+            ],
+            "target": "/topic/therapeia"
+          },
+          {
+            "source": [
+              "psyche.co/eudaimonia"
+            ],
+            "target": "/topic/eudaimonia"
+          },
+          {
+            "source": [
+              "psyche.co/poiesis"
+            ],
+            "target": "/topic/poiesis"
+          }
+        ],
+        "name": "Topics",
+        "maintainers": [
+          "emdoe"
+        ],
+        "description": "Supported categories: Therapeia, Eudaimonia, and Poiesis.",
+        "location": "topic.ts",
+        "module": "() => import('@/routes/psyche/topic.ts')"
+      },
+      "/type/:type": {
+        "path": "/type/:type",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/psyche/type/ideas",
+        "parameters": {
+          "type": "Type"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "psyche.co/ideas"
+            ],
+            "target": "/type/ideas"
+          },
+          {
+            "source": [
+              "psyche.co/guides"
+            ],
+            "target": "/type/guides"
+          },
+          {
+            "source": [
+              "psyche.co/films"
+            ],
+            "target": "/type/films"
+          }
+        ],
+        "name": "Types",
+        "maintainers": [
+          "emdoe"
+        ],
+        "description": "Supported types: Ideas, Guides, and Films.",
+        "location": "type.ts",
+        "module": "() => import('@/routes/psyche/type.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Psyche",
+    "url": "psyche.co",
+    "lang": "en"
   },
   "ryo.lu": {
     "routes": {
@@ -173872,6 +172983,178 @@
     "description": "::: warning\n由于区域限制，需要在有国内 IP 的机器上自建才能正常获取 RSS。而对于《TapTap 国际版》则需要部署在具有海外出口的 IP 上才可正常获取 RSS。\n:::",
     "lang": "zh-CN"
   },
+  "twreporter": {
+    "routes": {
+      "/category/:category": {
+        "path": "/category/:category",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/twreporter/category/world",
+        "parameters": {
+          "category": "Category"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "twreporter.org/:category"
+            ]
+          },
+          {
+            "source": [
+              "twreporter.org/categories/world"
+            ],
+            "target": "/category/world"
+          },
+          {
+            "source": [
+              "twreporter.org/categories/humanrights"
+            ],
+            "target": "/category/humanrights"
+          },
+          {
+            "source": [
+              "twreporter.org/categories/politics-and-society"
+            ],
+            "target": "/category/politics_and_society"
+          },
+          {
+            "source": [
+              "twreporter.org/categories/health"
+            ],
+            "target": "/category/health"
+          },
+          {
+            "source": [
+              "twreporter.org/categories/environment"
+            ],
+            "target": "/category/environment"
+          },
+          {
+            "source": [
+              "twreporter.org/categories/econ"
+            ],
+            "target": "/category/econ"
+          },
+          {
+            "source": [
+              "twreporter.org/categories/culture"
+            ],
+            "target": "/category/culture"
+          },
+          {
+            "source": [
+              "twreporter.org/categories/education"
+            ],
+            "target": "/category/education"
+          },
+          {
+            "source": [
+              "twreporter.org/categories/podcast"
+            ],
+            "target": "/category/podcast"
+          },
+          {
+            "source": [
+              "twreporter.org/categories/opinion"
+            ],
+            "target": "/category/opinion"
+          },
+          {
+            "source": [
+              "twreporter.org/categories/photography"
+            ],
+            "target": "/category/photos_section"
+          }
+        ],
+        "name": "分類",
+        "maintainers": [
+          "emdoe"
+        ],
+        "url": "twreporter.org/",
+        "location": "category.ts",
+        "module": "() => import('@/routes/twreporter/category.ts')"
+      },
+      "/newest": {
+        "path": "/newest",
+        "categories": [
+          "new-media"
+        ],
+        "example": "/twreporter/newest",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "twreporter.org/"
+            ]
+          }
+        ],
+        "name": "最新",
+        "maintainers": [
+          "emdoe"
+        ],
+        "url": "twreporter.org/",
+        "location": "newest.ts",
+        "module": "() => import('@/routes/twreporter/newest.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "報導者",
+    "url": "twreporter.org",
+    "lang": "zh-TW"
+  },
+  "fanbox": {
+    "routes": {
+      "/:creator": {
+        "path": "/:creator",
+        "categories": [
+          "social-media"
+        ],
+        "example": "/fanbox/official",
+        "parameters": {
+          "creator": "fanbox user name"
+        },
+        "maintainers": [
+          "KarasuShin",
+          "pseudoyu"
+        ],
+        "name": "Creator",
+        "features": {
+          "requireConfig": [
+            {
+              "name": "FANBOX_SESSION_ID",
+              "description": "Required for private posts. Can be found in browser DevTools -> Application -> Cookies -> https://www.fanbox.cc -> FANBOXSESSID",
+              "optional": true
+            }
+          ],
+          "requirePuppeteer": false,
+          "nsfw": true
+        },
+        "location": "index.ts",
+        "module": "() => import('@/routes/fanbox/index.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "fanbox",
+    "url": "www.fanbox.cc",
+    "lang": "zh-CN"
+  },
   "google": {
     "routes": {
       "/album/:id": {
@@ -174289,6 +173572,60 @@
     "name": "Google",
     "url": "www.google.com",
     "lang": "en"
+  },
+  "zuvio": {
+    "routes": {
+      "/student5/boards": {
+        "path": "/student5/boards",
+        "categories": [
+          "bbs"
+        ],
+        "example": "/zuvio/student5/boards",
+        "parameters": {},
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "看板列表",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "location": "boards.ts",
+        "module": "() => import('@/routes/zuvio/boards.ts')"
+      },
+      "/student5/:board?": {
+        "path": "/student5/:board?",
+        "categories": [
+          "bbs"
+        ],
+        "example": "/zuvio/student5/34",
+        "parameters": {
+          "board": "看板 ID，空为全站文章，可在看板 URL 或下方路由找到"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "校園話題",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "location": "student5.ts",
+        "module": "() => import('@/routes/zuvio/student5.ts')"
+      }
+    },
+    "apiRoutes": {},
+    "name": "Zuvio",
+    "url": "irs.zuvio.com.tw",
+    "lang": "zh-TW"
   },
   "twitter": {
     "routes": {
